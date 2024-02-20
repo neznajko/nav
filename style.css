@@ -1,0 +1,18 @@
+:root {
+    --body-bgr: hsl( 200, 10%, 10% );
+    --body-fgr: hsl( 202, 13%, 50% );
+}
+html {
+    height: 100%;
+}
+html, body {
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    min-height: 100%;
+    background-color: var( --body-bgr );
+    color: var( --body-fgr );
+}
