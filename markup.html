@@ -4,13 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> nav </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2
+?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2
+?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="lib/bootstrap/bootstrap.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="float">
+        <ul>
+            <li class="brand">
+                <a href="#"> nav </a>
+            </li>
+            <li>
+                <a href="#"> Home </a>
+            </li>
+            <li>
+                <a href="#"> Stuff </a>
+            </li>
+            <li>
+                <a href="#"> About </a>
+            </li> <!---->
+        </ul>
+        <div>
+            <form>
+                <input type="text" placeholder="Search ..">
+                <button type="submit"> submit </button>
+            </form>
+        </div>
+    </nav>
     <script src="lib/bootstrap/bootstrap.bundle.js"></script>
     <script src="script.js"></script>
+    <script>
+      document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+                     ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
 </body>
 </html>
 <!--
