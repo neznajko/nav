@@ -1,0 +1,133 @@
+:root {
+    --float-bgr:          hsl( 228, 50%, 50% );
+    --float-brand-bgr:    hsl( 210, 50%, 20% );
+    --float-brand-fgr:    hsl( 180, 99%, 59% );
+    --float-brand-fgr-2:  hsl( 190, 80%, 50% );
+    --float-link-bgr-2:   hsl( 215, 20%, 68% );
+    --float-link-bgr:     hsl( 220, 30%, 58% );
+    --float-link-fgr:     hsl( 210, 21%, 10% );
+    --float-input-bgr:    hsl(   0,  8%, 78% );
+    --float-input-fgr:    hsl(   0,  8%, 10% );
+    --float-button-bgr:   hsl( 250, 35%, 28% );
+    --float-button-bgr-2: hsl( 235, 34%, 25% );
+    --float-button-fgr:   hsl( 240,  5%, 75% );
+}
+nav.float {
+    font-family: 'DM Sans';
+    font-size: 1.35rem;
+    min-height: 4.5rem;
+    background-color: var( --float-bgr );
+    display: flex;
+    justify-content: space-between;
+}
+.float ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding-left: 1.2rem;
+}
+.float li {
+    margin-right: 0.5rem;
+    height: 58%;
+}
+.float a {
+    text-decoration: none;
+    background-color: var( --float-link-bgr );
+    color: var( --float-link-fgr );
+    display: inline-flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    border-radius: 0.5rem;
+}
+.float-brand > a {
+    background-color: var( --float-brand-bgr );
+    color: var( --float-brand-fgr );
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    padding-left: 3.8rem;
+    padding-right: 1.1rem;
+    border: 2px solid var( --float-brand-fgr );
+    margin-right: 0.08rem;
+}
+.float-brand > a:hover {
+    background-color: var( --float-brand-bgr );
+    color: var( --float-brand-fgr-2 );
+}
+nav.float > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.float form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.float input {
+    background-color: var( --float-input-bgr );
+    padding-left: 1rem;
+    border-radius: 0.6rem;
+    border: none;
+    margin-right: 0rem;
+}
+.float input::placeholder {
+    color: var( --float-input-fgr );
+    font-style: italic;
+    letter-spacing: 0.1rem;
+}
+.float button {
+    margin-left: 1.0rem;
+    margin-right: 1.29rem;
+    padding: 0.5rem 1rem 0.5rem 1.1rem;
+    font-family: 'Roboto';
+    font-size: 1.2rem;
+    letter-spacing: 0.29rem;
+    border-radius: 0.4rem;
+    background-color: var( --float-button-bgr );
+    color: var( --float-button-fgr );
+    border: none;
+}
+.float button:hover {
+    background-color: var( --float-button-bgr-2 );
+}
+@media screen and (orientation: landscape) {
+    body {
+    }
+}
+@media screen and ( max-width: 600px ){
+    .float ul {
+        flex-direction: column;
+        align-items: start;
+        padding-left: 0;
+        width: 100%;
+    }
+    .float li {
+        margin-bottom: 1px;
+        width: 100%;
+    }
+    .float a {
+        border-radius: 0;
+        width: 100%;
+        justify-content: start;
+    }
+    nav.float {
+        flex-direction: column;
+    }
+    .float-brand > a {
+        padding-left: 2rem;
+    }
+    nav.float input {
+    }
+    nav.float form {
+        flex-direction: column;
+        align-items: start;
+        padding-left: 2rem;
+        padding-top: 1rem;
+    }
+    nav.float button {
+        margin: 1rem 0 0.5rem 0;
+    }
+}

@@ -1,0 +1,19 @@
+:root {
+    --body-bgr:          hsl( 200, 10%, 50% );
+    --body-fgr:          hsl( 202, 13%, 50% );
+}
+html {
+    height: 100%;
+}
+html, body, a, ul, li, nav {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    min-height: 100%;
+    background-color: var( --body-bgr );
+    color: var( --body-fgr );
+}
