@@ -1,6 +1,6 @@
 :root {
     --body-bgr:          hsl( 200, 10%, 50% );
-    --body-fgr:          hsl( 202, 13%, 50% );
+    --body-fgr:          hsl( 202, 13%, 80% );
 }
 html {
     height: 100%;
