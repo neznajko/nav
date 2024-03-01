@@ -1,4 +1,46 @@
-.folder-page {
-    height: 20vh;
-    background-color: brown;
+.folder {
+    height: 24vh;
+    background-color: #522;
+}
+.folder > nav {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat( 3, 1fr );
+    grid-template-columns: repeat( 5, 1fr );
+}
+.folder-link {
+    color: white;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font: 1.5rem monospace;
+}
+.folder-1 {
+    background: #800;
+    grid-column: 2/4;
+    z-index: 1;
+}
+.folder-2 {
+    background: #700;
+    grid-column: 3/5;
+    z-index: 0;
+}
+.folder-base {
+    grid-row: 3;
+    grid-column: 1/-1;
+    background: blue;
+}
+/***********************************************
+ * gestalt                                 shape
+ * bestehen                                exist
+ * hebung                                   rise
+ * rechteck                            rectangle
+ **********************************************/
+@media screen and ( max-width: 600px ){
+    .folder > nav {
+	display: flex;
+	flex-direction: column;
+    }
 }

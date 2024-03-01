@@ -13,7 +13,7 @@
     --float-button-fgr:   hsl( 240,  5%, 75% );
 }
 .float-page {
-    display: flex;
+    display: none; /* flex */
     flex-direction: column;
 }
 nav.float {
