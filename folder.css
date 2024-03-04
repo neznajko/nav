@@ -1,6 +1,17 @@
 .folder {
     height: 24vh;
     background-color: #522;
+    position: relative;
+}
+.folder > a {
+    text-decoration: none;
+}
+.folder-brand {
+    position: absolute;
+    font-size: 5rem;
+    color: red;
+    left: 25px;
+    z-index: 4;
 }
 .folder > nav {
     height: 100%;
@@ -49,6 +60,23 @@
  * rechteck                            rectangle
  * haupt                                    head
  **********************************************/
+.folder form {
+    grid-column: 9;
+    grid-row: 1/4;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-right: 20px;
+}
+.folder form > input {
+    background: #800;
+}
+.folder form > input::placeholder {
+    color: #fb0;
+}
+.folder form > button {
+    margin-left: 10px;
+}
 @media screen and ( max-width: 600px ){
     .folder > nav {
 	display: flex;
