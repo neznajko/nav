@@ -1,24 +1,40 @@
+:root {
+    --folder-bgr: hsl( 15, 10%, 60% );
+}
 .folder {
-    height: 24vh;
-    background-color: #522;
-    position: relative;
 }
 .folder > a {
-    text-decoration: none;
-}
-.folder-brand {
-    position: absolute;
-    font-size: 5rem;
-    color: red;
-    left: 25px;
-    z-index: 4;
 }
 .folder > nav {
-    height: 100%;
+    min-height: 8rem;
+    background-color: var( --folder-bgr );
     width: 100%;
     display: grid;
-    grid-template-rows: 4fr 1fr 3fr 5fr;
-    grid-template-columns: 10% repeat( 7, auto ) 50%;
+    grid-template-rows: 3fr 1fr 3fr 6fr;
+    grid-template-columns: auto repeat( 7, auto ) 40%;
+}
+.folder > nav > a.folder-brand {
+    max-width: 8rem;
+    position: relative;
+    font-size: 400%;
+    font-weight: 700;
+    color: hsl( 10, 60%, 90% );
+    left: 0px;
+    top: 0px;
+    grid-row: 1/-1;
+    grid-column: 1;
+    z-index: 4;
+    border: 1px solid white;
+    margin: 1rem;
+    border-radius: 1rem;
+    -webkit-text-stroke: 6px red;
+    padding-bottom: 10px;
+}
+.folder-base {
+    grid-row: 4;
+    grid-column: 1/-1;
+    background: hsl( 210, 10%, 10% );
+    z-index: 0;
 }
 .folder > nav > a.folder-1 {
     background: blue;
@@ -46,12 +62,6 @@
     background: #00a;
     grid-row: 3;
     grid-column: 7/9;
-}
-.folder-base {
-    grid-row: 4;
-    grid-column: 1/-1;
-    background: blue;
-    z-index: 0;
 }
 /***********************************************
  * gestalt                                 shape
@@ -81,5 +91,8 @@
     .folder > nav {
 	display: flex;
 	flex-direction: column;
+	justify-contnet: center;
+    }
+    .folder > nav > a.folder-brand {
     }
 }
