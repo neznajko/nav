@@ -13,7 +13,7 @@
     --float-button-fgr:   hsl( 240,  5%, 75% );
 }
 .float-page {
-    display: none; /* flex */
+    display: none; /* flex; */
     flex-direction: column;
 }
 nav.float {
@@ -74,7 +74,6 @@ nav.float > div {
     background-color: var( --float-input-bgr );
     padding-left: 1rem;
     border-radius: 0.6rem;
-    border: none;
     margin-right: 1vw;
     max-width: 23vw;
 }
@@ -93,14 +92,13 @@ nav.float > div {
     border-radius: 0.4rem;
     background-color: var( --float-button-bgr );
     color: var( --float-button-fgr );
-    border: none;
 }
 .float button:hover {
     background-color: var( --float-button-bgr-2 );
 }
 div.body {
     min-height: 20%;
-    background-color: blue;
+    background-color: hsl( 235, 60%, 20% );
     color: hsl( 260, 60%, 50% );
     letter-spacing: 1rem;
     font-size: 1.7rem;
