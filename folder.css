@@ -15,8 +15,8 @@
     background-color: var( --folder-bgr );
     width: 100%;
     display: grid;
-    grid-template-rows: 3fr 1fr 3fr 6fr;
-    grid-template-columns: repeat( 8, auto ) 40%;
+    grid-template-rows: 3fr 1fr 3fr 1fr 1fr 6fr;
+    grid-template-columns: 12% repeat( 7, auto ) 40%;
     font-family: "Noto Sans JP", sans-serif;
 }
 .folder a.folder-brand {
@@ -36,34 +36,54 @@
     padding-bottom: 0.8rem;
 }
 .folder-base {
-    grid-row: 4;
+    grid-row: 6;
     grid-column: 1/-1;
     background: var( --folder-links-bgr );
     z-index: 0;
 }
+.folder-base-2 {
+    grid-row: 5;
+    grid-column: 1/-1;
+    background: hsl( 30, 50%, 40% );
+    z-index: 0;
+}
+.folder-base-3 {
+    grid-row: 4;
+    grid-column: 1/-1;
+    background: hsl( 40, 20%, 40% );
+    z-index: 0;
+}
 .folder a.check {
     background: var( --folder-links-bgr );
-    grid-row: 3;
+    grid-row: 3 / 6;
     grid-column: 2/4;
     color: hsl( 200, 100%, 70% );
+    z-index: 2;
 }
 .folder a {
     text-decoration: none;
-    color: #aaa;
     display: flex;
-    align-items: end;
+    align-items: center;
     justify-content: center;
     font: 0.9rem monospace;
     border-radius: 10px 10px 0 0;
 }
-.folder-2 {
-    background: #00a;
-    grid-row: 2/4;
+.folder a.this {
+    background: hsl( 30, 50%, 40% );
+    color: hsl( 20, 40%, 80% );
+    grid-row: 2/5;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1rem;
     grid-column: 3/6;
     z-index: 1;
 }
-.folder-3 {
-    background: #00a;
+.folder a.out {
+    background: hsl( 40, 20%, 40% );
+    color: hsl( 20, 30%, 0% );
+    align-items: end;
+    justify-content: center;
+    padding-bottom: 0.29rem;
     grid-row: 3;
     grid-column: 7/9;
 }
@@ -95,11 +115,11 @@
     color: inherit;
 }
 .folder form > button {
-    padding: 0.5rem 1rem;
-    border-radius: 0.8rem;
-    background: hsl( 200, 15%, 20% );
-    color: hsla( 8, 10%, 80%, .8 );
-    font-weight: 700;
+    padding: 0.4rem 1.4rem 0.6rem 1.4rem;
+    border-radius: 1.6rem;
+    background: hsl( 240, 85%, 50% );
+    color: hsla( 220, 20%, 90%, .8 );
+    font-weight: 400;
 }
 @media screen and ( max-width: 600px ){
     .folder > nav {
@@ -122,6 +142,18 @@
     }
     .folder form {
 	margin: 0.5rem 0 0.5rem 1rem;
+	justify-content: start;
+    }
+    .folder a.this {
+	padding-left: 20vw;
+	justify-content: start;
+    }
+    .folder a.check {
+	padding-left: 20vw;
+	justify-content: start;
+    }
+    .folder a.out {
+	padding-left: 20vw;
 	justify-content: start;
     }
 }
