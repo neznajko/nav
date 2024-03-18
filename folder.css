@@ -9,8 +9,11 @@
     --folder-brand-border-2: 1px solid hsla( 230, 10%, 90%, 0.7 );
 
     --folder-links-bgr: hsl( 210, 10%, 10% );
+
+    --folder-radius: 2rem;
 }
 .folder > nav {
+    /* つくえ｜の｜上｜に｜本｜を｜おいて｜ください。*/
     min-height: 8rem;
     background-color: var( --folder-bgr );
     width: 100%;
@@ -34,21 +37,22 @@
     margin: 1rem;
     border-radius: 1rem;
     padding-bottom: 0.8rem;
+    z-index: 3;
 }
 .folder-base {
     grid-row: 6;
     grid-column: 1/-1;
     background: var( --folder-links-bgr );
-    z-index: 0;
+    z-index: 2;
 }
 .folder-base-2 {
-    grid-row: 5;
+    grid-row: 5/-1;
     grid-column: 1/-1;
     background: hsl( 30, 50%, 40% );
-    z-index: 0;
+    z-index: 1;
 }
 .folder-base-3 {
-    grid-row: 4;
+    grid-row: 4/-1;
     grid-column: 1/-1;
     background: hsl( 40, 20%, 40% );
     z-index: 0;
@@ -66,7 +70,7 @@
     align-items: center;
     justify-content: center;
     font: 0.9rem monospace;
-    border-radius: 10px 10px 0 0;
+    border-radius: var( --folder-radius ) var( --folder-radius ) 0 0;
 }
 .folder a.this {
     background: hsl( 30, 50%, 40% );
@@ -83,7 +87,7 @@
     color: hsl( 20, 30%, 0% );
     align-items: end;
     justify-content: center;
-    padding-bottom: 0.29rem;
+    padding-bottom: 0.19rem;
     grid-row: 3;
     grid-column: 7/9;
 }
@@ -123,37 +127,37 @@
 }
 @media screen and ( max-width: 600px ){
     .folder > nav {
-	display: flex;
-	flex-direction: column;
-	justify-contnet: center;
+	    display: flex;
+	    flex-direction: column;
+	    justify-contnet: center;
     }
     .folder a {
-	padding: 0.5rem 0;
-	border-radius: 0%;
+	    padding: 0.5rem 0;
+	    border-radius: 0%;
     }
     .folder a.folder-brand {
-	background: var( --folder-brand-bgr-2 );
-	color: var( --folder-brand-fgr-2 );
-	border: var( --folder-brand-border-2 ); 
-	padding: 0;
+	    background: var( --folder-brand-bgr-2 );
+	    color: var( --folder-brand-fgr-2 );
+	    border: var( --folder-brand-border-2 ); 
+	    padding: 0;	    justify-content: center;
     }
     .folder-base {
-	height: 4rem;
+	    height: 4rem;
     }
     .folder form {
-	margin: 0.5rem 0 0.5rem 1rem;
-	justify-content: start;
-    }
-    .folder a.this {
-	padding-left: 20vw;
-	justify-content: start;
+	    margin: 0.5rem 0 0.5rem 1rem;
+	    justify-content: start;
     }
     .folder a.check {
-	padding-left: 20vw;
-	justify-content: start;
+	    padding-left: 10vw;
+	    justify-content: start;
+    }
+    .folder a.this {
+	    padding-left: 25vw;
+	    justify-content: start;
     }
     .folder a.out {
-	padding-left: 20vw;
-	justify-content: start;
+	    padding-left: 60vw;
+	    justify-content: start;
     }
 }
