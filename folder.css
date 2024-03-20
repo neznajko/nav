@@ -39,19 +39,19 @@
     padding-bottom: 0.8rem;
     z-index: 3;
 }
-.folder-base {
+.check-base {
     grid-row: 6;
     grid-column: 1/-1;
     background: var( --folder-links-bgr );
     z-index: 2;
 }
-.folder-base-2 {
+.this-base {
     grid-row: 5/-1;
     grid-column: 1/-1;
     background: hsl( 30, 50%, 40% );
     z-index: 1;
 }
-.folder-base-3 {
+.out-base {
     grid-row: 4/-1;
     grid-column: 1/-1;
     background: hsl( 40, 20%, 40% );
@@ -141,7 +141,7 @@
 	    border: var( --folder-brand-border-2 ); 
 	    padding: 0;	    justify-content: center;
     }
-    .folder-base {
+    .check-base {
 	    height: 4rem;
     }
     .folder form {
