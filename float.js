@@ -1,30 +1,48 @@
-//////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 console.log( "floa4ing .." );
-//////////////////////////////////////////////////
-var root = getComputedStyle
-( document.documentElement );
-var floatLinkBgr = root.
-    getPropertyValue( '--float-link-bgr' );
-var floatLinkBgr2 = root.
-    getPropertyValue( '--float-link-bgr-2' );
-//////////////////////////////////////////////////
-const links = document
-      .querySelector( '.float' )
-      .querySelector( 'ul' )
-      .querySelectorAll( 'li' );
-//////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+const links = document.querySelector( '.float' )
+                      .querySelector(     'ul' )
+                      .querySelectorAll(  'li' );
+////////////////////////////////////////////////////////////////
 for( let j = 1; j < links.length; ++j ){
     const el = links[ j ];
     el.addEventListener( "mousedown", e => {
-        e.target.style.backgroundColor =
-            floatLinkBgr2;
+        e.target.style.outlineWidth = "2px";
     });
     el.addEventListener( "mouseup", e => {
-        e.target.style.backgroundColor =
-            floatLinkBgr;
+        e.target.style.outlineWidth = "1px";
     });
 }
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
-//////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+// 1.4.10: A sphere with radius R is moving with velocity u,
+// inside it, there is a second sphere with radius r < R, having
+// velocity v directed perpendicular to u, at the moment when
+// both spheres' centers have same positions. What is the
+// frequency of hits if larger sphere has mass much greater
+// then the smaller sphere?
+//#########      ###############################################
+//#######  ######  #############################################
+//###### #### ^ ̅v      ̅Y . ## ̅Y - the relative velocity of the      
+//##### ##### |       .    ## inner sphere with respect of the  
+//##### ### # |    .       ## outer                             
+//#### #### # | .      -̅u  #####################################
+//#### ### ## =----------> ## its size is: γ = √( v² + u² )     
+//#### #### #### #### ##########################################
+//##### ### #### ### ######## When we have a hit the remaining
+//##### #####  ##### ######## space for mov is 2(R - r), so the
+//###### ########## ######### time betveen two hits is:
+//#######  ######  ########## T = 2(R - r)|√( v² + u² ), so        
+//#########      ###############################################
+//########################### the frequency is:
+//########<  2r  >########### ν = 1|T = √( v² + u² )|2(R - r)  «
+//##############################################################
+//####<      2R     >###########################################
+//##############################################################
+//##############################################################
+//##############################################################
+//##############################################################

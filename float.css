@@ -4,8 +4,8 @@
     --float-brand-fgr:    hsl( 180, 99%, 59% );
     --float-brand-fgr-2:  hsl( 190, 80%, 50% );
     --float-link-bgr-2:   hsl( 215, 20%, 68% );
-    --float-link-bgr:     hsl( 220, 30%, 58% );
-    --float-link-fgr:     hsl( 210, 21%, 10% );
+    --float-link-bgr:     hsl( 320, 10%, 48% );
+    --float-link-fgr:     hsl(   0, 21%, 80% );
     --float-input-bgr:    hsl(   0,  8%, 78% );
     --float-input-fgr:    hsl(   0,  8%, 10% );
     --float-button-bgr:   hsl( 250, 35%, 28% );
@@ -31,7 +31,7 @@ nav.float {
     padding-left: 1.5vw;
 }
 .float li {
-    margin-right: 0.6vw;
+    margin-right: 0.7vw;
     height: 52%;
 }
 .float a {
@@ -44,6 +44,7 @@ nav.float {
     justify-content: center;
     padding: 0 2vw;
     border-radius: 0.5rem;
+    outline: 1px solid var( --float-link-fgr );
 }
 .float-brand > a {
     background-color: var( --float-brand-bgr );
@@ -55,6 +56,7 @@ nav.float {
     padding-right: 1vw;
     border: 2px solid var( --float-brand-fgr );
     margin-right: 0.08rem;
+    outline: none;
 }
 .float-brand > a:hover {
     background-color: var( --float-brand-bgr );
