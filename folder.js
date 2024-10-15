@@ -2,7 +2,7 @@
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
-console.log( 'floating......' );
+console.log( 'foldering ......' );
 ////////////////////////////////////////////////////////////////
 const folder = document.querySelector( ".folder" );
 const check = folder.querySelector( ".check" );
@@ -13,7 +13,6 @@ const _this_base = folder.querySelector( ".this-base"  );
 const out_base   = folder.querySelector( ".out-base"   );
 const brand = folder.querySelector( ".folder-brand" );
 let zindex = 3;
-
 function addEventListener( link, base ){
     link.addEventListener( "click", e => {
         link.style.zIndex = zindex;
