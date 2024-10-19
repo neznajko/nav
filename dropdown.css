@@ -3,38 +3,34 @@
 /**************************************************************/
 /**************************************************************/
 :root {
-  --body-bgr: hsl( 0, 0%, 10% );
-  --body-fgr: hsl( 0, 0%, 100% );
-  
-  --dropdown-brand-size:             7.5rem;  
-  --dropdown-brand-padding:    calc( var( --dropdown-brand-size ) / 16 );
-  --dropdown-brand-con-bgr:          hsla( 0, 0%, 20%, 1.0 );
-  --dropdown-brand-bgr:              hsla( 0, 0%, 50%, 1.0 );
-  --dropdown-brand-fgr:              hsla( 0, 0%, 10%, 1.0 );
-  --dropdown-brand-border: 1px solid var( --dropdown-brand-con-bgr );
-  --dropdown-brand-grad-1:           hsla( 0, 0%, 40%, .50 ) 10%;
-  --dropdown-brand-grad-2:           hsla( 0, 0%, 15%, .70 ) 50%;
-
-  --dropdown-links-bgr:              hsla( 0, 0%, 15%, 1.0 );
-
-  --dropdown-search-con-bgr:   var( --dropdown-links-bgr );
-  --dropdown-search-height:    calc( var( --dropdown-brand-size ) / 2 );
-  --dropdown-search-width:     calc( var( --dropdown-brand-size ) * 1.2 );
-  --dropdown-search-font-size: calc( var( --dropdown-search-height ) / 2.8 );
-  --dropdown-search-radius:    calc( var( --dropdown-search-height ) / 2 );
-  --dropdown-search-bgr:       hsla( 0, 0%, 35%, 1.0 );
-  --dropdown-placeholder-fgr:  hsla( 0, 0%, 20%, 0.8 );
-  --dropdown-button-fgr:       var( --dropdown-search-bgr );
-  --dropdown-button-bgr:       hsla( 0, 0%,  8%, 1.0 );
-  --dropdown-search-fgr:       var( --dropdown-button-bgr );
-  --dropdown-button-width:     calc( var( --dropdown-search-width ) / 2 );
+  --body-bgr:               hsl( 0, 0%, 10% );
+  --body-fgr:               hsl( 0, 0%, 100% );
+  --dropdown-brand-size: 7.5rem;  
+  --dropdown-brand-padding: calc(var(--dropdown-brand-size)/16);
+  --dropdown-brand-con-bgr: hsla( 0, 0%, 20%, 1.0 );
+  --dropdown-brand-bgr:     hsla( 0, 0%, 50%, 1.0 );
+  --dropdown-brand-fgr:     hsla( 0, 0%, 10%, 1.0 );
+  --dropdown-brand-border: 1px solid var(--dropdown-brand-con-bgr);
+  --dropdown-brand-grad-1:  hsla( 0, 0%, 40%, .50 ) 10%;
+  --dropdown-brand-grad-2:  hsla( 0, 0%, 15%, .70 ) 50%;
+  --dropdown-links-bgr:     hsla( 0, 0%, 15%, 1.0 );
+  --dropdown-search-con-bgr: var(--dropdown-links-bgr);
+  --dropdown-search-height: calc(var(--dropdown-brand-size)/2);
+  --dropdown-search-width: calc(var(--dropdown-brand-size)*1.2);
+  --dropdown-search-fontsiz: calc(var(--dropdown-search-height)/2.8);
+  --dropdown-search-radius: calc(var(--dropdown-search-height)/2);
+  --dropdown-search-bgr:      hsla( 0, 0%, 35%, 1.0 );
+  --dropdown-placeholder-fgr: hsla( 0, 0%, 20%, 0.8 );
+  --dropdown-button-fgr: var(--dropdown-search-bgr);
+  --dropdown-button-bgr:      hsla( 0, 0%,  8%, 1.0 );
+  --dropdown-search-fgr: var(--dropdown-button-bgr);
+  --dropdown-button-width: calc(var(--dropdown-search-width)/2);
   --dropdown-padding-left: 1.5rem;
   --dropdown-body-height: 3.8rem;
-
-  --dropdown-bgr: hsla( 15, 25%, 20%, 0.9 );
-  --dropdown-fgr: hsla( 20, 30%, 40%, 0.8 );
+  --dropdown-bgr:      hsla( 15, 25%, 20%, 0.9 );
+  --dropdown-fgr:      hsla( 20, 30%, 40%, 0.8 );
   --dropdown-link-fgr: hsla( 20, 25%, 70%, 0.8 );
-  --dropdown-font-size: calc( var( --dropdown-brand-size ) / 6 );
+  --dropdown-font-size: calc(var(--dropdown-brand-size)/6);
 }
 html {
   height: 100%;
@@ -78,12 +74,13 @@ a {
 }
 
 .dropdown-body {
-    background: #221;
-    color: #541;
-    font-size: calc( var( --dropdown-body-height ) / 2.5 );
+    background-color: hsl( 20, 50%, 10% );
+    color: hsl( 350, 10%, 50% );
+    font-size: calc(var(--dropdown-body-height)/2);
     display: flex;
     align-items: center;
     padding-left: var( --dropdown-padding-left );
+    font-family: "Dancing Script";
 }
 
 .dropdown-brand-con {
@@ -120,6 +117,9 @@ a {
     font-size: var( --dropdown-font-size );
     color: var( --dropdown-fgr );
     font-family: serif;
+    border-radius: 20px;
+    margin-top: -10px;
+    margin-left: -20px;
 }
 .dropdown_link {
     color: inherit;
@@ -130,14 +130,16 @@ a {
     color: var( --dropdown-link-fgr );
     background: var( --dropdown-fgr );
     font-style: italic;
+    border-radius: 20px 0 0 20px;
 }
 .dropdown_anime {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: inherit;
+    color: cyan;
     grid-area: dropdown_anime;
-    background: blue;
+    background: hsl( 0, 30%, 25% );
+    border-radius: 0 20px 20px 0;
 }
 .dropdown_menu {
     color: inherit;
@@ -261,7 +263,7 @@ a {
                    0 var( --dropdown-search-radius );
     display: block;
     padding-left: var( --dropdown-search-radius );
-    font-size: var( --dropdown-search-font-size );
+    font-size: var( --dropdown-search-fontsiz );
     background: var( --dropdown-search-bgr );
 }
 
@@ -292,14 +294,14 @@ a {
     }
     .dropdown {
         position: static;
-        width: 100%;
+        width: 80%;
+        margin: 0;
     }
     .dropdown-search-con {
         padding-left: var( --dropdown-padding-left );
         padding-bottom: var( --dropdown-padding-left );
     }
 }
-/**********************************************************/
 /**************************************************************/
 /**************************************************************/
 /**************************************************************/
