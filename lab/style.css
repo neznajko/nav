@@ -1,0 +1,163 @@
+/**************************************************************/
+:root {
+  --body-bgr: hsl( 250, 10%, 5% );
+  --body-fgr: hsl( 0, 0%, 100% );
+  --alt-nav-bgr: hsl( 210, 55%, 34% );
+  --alt-body-bgr: hsl( 300, 40%, 20% );
+  --alt-nav-height: 10rem;
+  --alt-brand-con-bgr: hsla( 20, 20%, 80%, 1.0 );
+  --alt-links-con-bgr: hsla( 20, 20%, 70%, 1.0 );
+  --alt-srch-con-width: 16rem;
+  --alt-srch-input-height: calc( .29 * var( --alt-nav-height ));
+  --alt-srch-ryteoff: calc( .18 * var( --alt-srch-con-width ));
+}
+/**************************************************************/
+html {
+  height: 100%;
+}
+/**************************************************************/
+html, body {
+  margin: 0;
+  padding: 0;
+}
+/**************************************************************/
+* {
+  box-sizing: border-box;
+}
+/**************************************************************/
+body {
+  background: var( --body-bgr );
+  color: var( --body-fgr );
+  font-size: 2rem;
+}
+/**************************************************************/
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+/**************************************************************/
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/**************************************************************/
+.alt-cont {
+}
+/**************************************************************/
+.alt-body {
+  background: var( --alt-body-bgr );
+  height: calc( 0.4 * var( --alt-nav-height ));
+}
+/**************************************************************/
+.alt-nav {
+  background: var( --alt-nav-bgr );
+  height: var( --alt-nav-height );
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: var( --alt-nav-height ) 
+                         auto
+                         var( --alt-srch-con-width );
+}
+/**************************************************************/
+.alt-brand-con {
+  background: var( --alt-brand-con-bgr );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.alt-brand-con > svg {
+  background: hsla( 350, 50%, 20%, 1.0 );
+}
+.alt-brand-con > svg > rect {
+    x: 0;
+    width: 100%;
+}
+.alt-brand-con > svg > circle {
+    cx: 100;
+    cy: 148;
+    stroke: hsla( 0, 50%, 50%, .9 );
+    stroke-width: 1px;
+}
+/**************************************************************/
+/**************************************************************/
+.alt-links-con {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 4rem;
+  background: var( --alt-links-con-bgr );
+}
+.alt-link {
+  width: 8rem;
+  height: 2.5rem;
+  background: var( --alt-links-con-bgr );
+  margin-top: 0.5rem;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var( --alt-body-bgr );
+  border: 2px solid hsl( 300, 18%, 80% );
+//  border: 2px solid var( --alt-body-bgr );
+  border-radius: 10rem;
+}
+.alt-link.lasers {
+    background: hsla( 25, 25%, 60%, 1.0 );
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1.2rem;
+    border: 2px solid hsl( 300, 29%, 40% );
+}
+.alt-link.the {
+    margin-bottom: 1.5rem;
+    color:  hsl( 300, 29%, 60% );
+    border: 2px solid hsl( 340, 39%, 50% );
+}
+/**************************************************************/
+.alt-srch-con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //background: var( --alt-brand-con-bgr );
+  background: hsl( 300, 18%, 60% );
+  position: relative;
+}
+/**************************************************************/
+.alt-srch-input {
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  height: var( --alt-srch-input-height ); 
+  width: calc( 0.7 * var( --alt-srch-con-width ));
+  background: black;
+  border-radius: 10rem 10rem 10rem 4rem;
+  color: green;
+  position: absolute;
+  right: var( --alt-srch-ryteoff );
+}
+/**************************************************************/
+.alt-srch-button {
+  font-size: 1.4rem;
+  color: var( --alt-brand-con-bgr );
+  opacity: .65;
+  font-weight: 1000;
+  position: absolute;
+  right: calc( 1.5 * var( --alt-srch-ryteoff ));
+}
+/**************************************************************/
+/**************************************************************/
+/**************************************************************/
+/**************************************************************/
+@media( max-width: 600px ){
+  .alt-nav {
+    grid-template-columns: 100%;
+    grid-template-rows: 200px auto 100px;
+  } 
+  .alt-links-con {
+      flex-direction: column;
+      padding: 0;
+  }
+}
+/***************************************************************
+ * log:
+ **************************************************************/
