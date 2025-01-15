@@ -13,7 +13,7 @@
     --folder-radius: 2rem;
 }
 .folder > nav {
-    /* つくえ｜の｜上｜に｜本｜を｜おいて｜ください。*/
+    /* つくえ｜の｜上｜に｜本｜を｜おいて｜ください。 */
     min-height: 8rem;
     background-color: var( --folder-bgr );
     width: 100%;
@@ -135,13 +135,14 @@ nav > p {
 }
 @media screen and ( max-width: 600px ){
     nav > p {
-        top: 1rem;
-        right: 2rem;
+        top: 14.5rem;
+        left: 2rem;
     }
     .folder > nav {
 	    display: flex;
 	    flex-direction: column;
 	    justify-contnet: center;
+        height: auto;
     }
     .folder a {
 	    padding: 0.5rem 0;

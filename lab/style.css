@@ -13,7 +13,7 @@
 }
 /**************************************************************/
 html {
-  height: 100%;
+    height: 100%;
 }
 /**************************************************************/
 html, body {
@@ -43,6 +43,8 @@ a {
 }
 /**************************************************************/
 .alt-cont {
+    display: flex;
+    flex-direction: column;
 }
 /**************************************************************/
 .alt-body {
@@ -86,7 +88,8 @@ a {
   align-items: center;
   justify-content: start;
   padding-left: 4rem;
-  background: var( --alt-links-con-bgr );
+  background: center no-repeat url( "pix/alt-background.svg" );
+  background-size: cover;
 }
 .alt-link {
   width: 8rem;
@@ -99,7 +102,6 @@ a {
   justify-content: center;
   color: var( --alt-body-bgr );
   border: 2px solid hsl( 300, 18%, 80% );
-//  border: 2px solid var( --alt-body-bgr );
   border-radius: 10rem;
 }
 .alt-link.lasers {
@@ -111,15 +113,15 @@ a {
 }
 .alt-link.the {
     margin-bottom: 1.5rem;
-    color:  hsl( 300, 29%, 60% );
-    border: 2px solid hsl( 340, 39%, 50% );
+    color:  hsl( 200, 89%, 60% );
+    border: 2px solid hsl( 210, 100%, 80% );
+    background: hsl( 200, 50%, 20% );
 }
 /**************************************************************/
 .alt-srch-con {
   display: flex;
   justify-content: center;
   align-items: center;
-  //background: var( --alt-brand-con-bgr );
   background: hsl( 300, 18%, 60% );
   position: relative;
 }
@@ -146,12 +148,15 @@ a {
 }
 /**************************************************************/
 /**************************************************************/
-/**************************************************************/
-/**************************************************************/
+/**************************************************************
+ (1) きむらさんは　パーテイーに　行きます。
+     やまぐちさんも　パーテイーに　いきます。
+ **************************************************************/
 @media( max-width: 600px ){
   .alt-nav {
     grid-template-columns: 100%;
     grid-template-rows: 200px auto 100px;
+    height: auto;
   } 
   .alt-links-con {
       flex-direction: column;
