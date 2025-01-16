@@ -7,9 +7,9 @@
   --alt-nav-height: 10rem;
   --alt-brand-con-bgr: hsla( 20, 20%, 80%, 1.0 );
   --alt-links-con-bgr: hsla( 20, 20%, 70%, 1.0 );
-  --alt-srch-con-width: 16rem;
+  --alt-srch-con-width: 11.5rem;
   --alt-srch-input-height: calc( .29 * var( --alt-nav-height ));
-  --alt-srch-ryteoff: calc( .18 * var( --alt-srch-con-width ));
+  --alt-srch-ryteoff: calc( .15 * var( --alt-srch-con-width ));
 }
 /**************************************************************/
 html {
@@ -67,6 +67,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  grid-column: 1;
 }
 .alt-brand-con > svg {
   background: hsla( 350, 50%, 20%, 1.0 );
@@ -84,38 +85,40 @@ a {
 /**************************************************************/
 /**************************************************************/
 .alt-links-con {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  padding-left: 4rem;
+  display: grid;
+  grid-template-columns: repeat( 8, 1fr );
+  grid-template-rows: repeat( 8, 1fr );
   background: center no-repeat url( "pix/alt-background.svg" );
   background-size: cover;
+  grid-column: 2;
 }
 .alt-link {
-  width: 8rem;
-  height: 2.5rem;
-  background: var( --alt-links-con-bgr );
-  margin-top: 0.5rem;
-  font-size: 1.4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var( --alt-body-bgr );
-  border: 2px solid hsl( 300, 18%, 80% );
-  border-radius: 10rem;
+    width: 8rem;
+    height: 2.5rem;
+    background: var( --alt-links-con-bgr );
+    margin-top: 0.5rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var( --alt-body-bgr );
+    border: 2px solid hsl( 300, 18%, 80% );
+    border-radius: 10rem;
+    grid-row: 4;
+    grid-column: 2;
 }
 .alt-link.lasers {
     background: hsla( 25, 25%, 60%, 1.0 );
-    margin-left: 2rem;
-    margin-right: 2rem;
     margin-top: 1.2rem;
     border: 2px solid hsl( 300, 29%, 40% );
+    grid-column: 4;
 }
 .alt-link.the {
     margin-bottom: 1.5rem;
     color:  hsl( 200, 89%, 60% );
     border: 2px solid hsl( 210, 100%, 80% );
     background: hsl( 200, 50%, 20% );
+    grid-column: 6;
 }
 /**************************************************************/
 .alt-srch-con {
@@ -124,6 +127,7 @@ a {
   align-items: center;
   background: hsl( 300, 18%, 60% );
   position: relative;
+  grid-column: 3;
 }
 /**************************************************************/
 .alt-srch-input {
@@ -133,7 +137,7 @@ a {
   width: calc( 0.7 * var( --alt-srch-con-width ));
   background: black;
   border-radius: 10rem 10rem 10rem 4rem;
-  color: green;
+  color: red;
   position: absolute;
   right: var( --alt-srch-ryteoff );
 }
@@ -144,7 +148,7 @@ a {
   opacity: .65;
   font-weight: 1000;
   position: absolute;
-  right: calc( 1.5 * var( --alt-srch-ryteoff ));
+  right: calc( 1.6 * var( --alt-srch-ryteoff ));
 }
 /**************************************************************/
 /**************************************************************/
@@ -155,12 +159,33 @@ a {
 @media( max-width: 600px ){
   .alt-nav {
     grid-template-columns: 100%;
-    grid-template-rows: 200px auto 100px;
+    grid-template-rows: 200px 300px 100px;
     height: auto;
   } 
+  .alt-brand-con {
+      grid-column: 1;
+      grid-row: 1;
+  }
   .alt-links-con {
-      flex-direction: column;
-      padding: 0;
+      min-height: 10rem;
+      grid-column: 1;
+      grid-row: 2;
+  }                      
+  .alt-srch-con {
+      grid-column: 1;
+      grid-row: 3;
+  }
+  .alt-link {
+      grid-column: 4;
+      grid-row: 2;
+  }
+  .alt-link.lasers {
+      grid-column: 3;
+      grid-row: 4;
+  }
+  .alt-link.the {
+      grid-column: 4;
+      grid-row: 6;
   }
 }
 /***************************************************************
