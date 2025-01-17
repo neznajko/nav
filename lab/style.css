@@ -10,6 +10,9 @@
   --alt-srch-con-width: 11.5rem;
   --alt-srch-input-height: calc( .29 * var( --alt-nav-height ));
   --alt-srch-ryteoff: calc( .15 * var( --alt-srch-con-width ));
+  --alt-duration: 3s;
+  --alt-laser-from: 0;
+  --alt-laser-to:   100%;
 }
 /**************************************************************/
 html {
@@ -91,7 +94,34 @@ a {
   background: center no-repeat url( "pix/alt-background.svg" );
   background-size: cover;
   grid-column: 2;
+  position: relative;
 }
+/***************************************************************
+ * L A S E R
+ **************************************************************/
+.alt-laser {
+    height: 100%;
+    width: 2px;
+    background: white;
+    position: absolute;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    left: 0;
+    z-index: 1;
+}
+.alt-scan { /* a n i m a t i o n */
+    animation-name: altscan;
+    animation-duration: 5s; //var( --alt-duration );
+    /*animation-delay: 0.3s;*/
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+@keyframes altscan {
+    from { left: var( --alt-laser-from ); }
+    to {   left: var( --alt-laser-to ); }
+}
+/***************************************************************
+ **************************************************************/
 .alt-link {
     width: 8rem;
     height: 2.5rem;
@@ -106,6 +136,7 @@ a {
     border-radius: 10rem;
     grid-row: 4;
     grid-column: 2;
+    z-index: 2;
 }
 .alt-link.lasers {
     background: hsla( 25, 25%, 60%, 1.0 );
@@ -119,6 +150,12 @@ a {
     border: 2px solid hsl( 210, 100%, 80% );
     background: hsl( 200, 50%, 20% );
     grid-column: 6;
+}
+.alt-point {
+    grid-column: 7;
+    grid-row-start: 7;
+    grid-row-end: 9;
+    background: var( --alt-body-bgr );
 }
 /**************************************************************/
 .alt-srch-con {
@@ -186,6 +223,15 @@ a {
   .alt-link.the {
       grid-column: 4;
       grid-row: 6;
+  }
+  .alt-laser {
+      display: none;
+  }
+  .alt-point {
+      grid-column-start: 6;
+      grid-column-end: 9;
+      grid-row: 8;
+      background: hsl( 300, 18%, 60% );
   }
 }
 /***************************************************************
