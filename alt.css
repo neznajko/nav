@@ -121,6 +121,15 @@ a {
     background: var( --alt-body-bgr );
 }
 /***************************************************************/
+.alt-drop {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background: hsl( 20, 50%, 10% );
+    width: 8rem;
+}
+/***************************************************************/
 /***************************************************************/
 .alt-srch-con {
     background: var( --alt-srch-con-bgr );
@@ -172,6 +181,9 @@ a {
         grid-column-end: 9;
         grid-row: 8;
         background: var( --alt-srch-con-bgr );
+    }
+    .alt-drop {
+        display: none;
     }
 }
 /***************************************************************/
