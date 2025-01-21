@@ -9,6 +9,8 @@
     --alt-duration: 10s;
     --alt-laser-from: 0;
     --alt-laser-to:   100%;
+    --alt-drop-clr-1: hsl( 20, 20%, 70% );
+    --alt-drop-clr-2: hsla( 20, 50%, 10%, 1.0 );
 }
 /***************************************************************/
 a {
@@ -69,7 +71,7 @@ a {
     height: 2.5rem;
     border: 2px solid hsl( 300, 18% ,80% );
     border-radius: 10rem;
-    margin-top: 0.5rem;
+    margin-top: 1.5rem;
     color: var( --alt-body-bgr );
     z-index: 2;
 }
@@ -80,6 +82,7 @@ a {
     color: hsl( 0, 80%, 20% );
     background: hsl( 25, 50%, 55% );
     border-color: hsl( 300, 29%, 40% );
+    border-width: 5px;
 }
 /***************************************************************/
 .alt-link.the {
@@ -125,11 +128,21 @@ a {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 3;
-    background: hsl( 20, 50%, 10% );
+    grid-row-end: 4;
     width: 8rem;
+    display: grid;
+    grid-template-columns: repeat( 5, 1fr );
+    grid-template-rows: repeat( 3, 1fr );
 }
 /***************************************************************/
+.alt-drop-1 {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column: 2;
+    //background: var( --alt-drop-clr-2 );
+    background: hsl( 210, 100%, 60% );
+    margin-bottom: -7rem;
+}
 /***************************************************************/
 .alt-srch-con {
     background: var( --alt-srch-con-bgr );
@@ -183,7 +196,7 @@ a {
         background: var( --alt-srch-con-bgr );
     }
     .alt-drop {
-        display: none;
+        grid-column: 3
     }
 }
 /***************************************************************/
