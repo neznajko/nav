@@ -2,17 +2,6 @@
 :root {
   --body-bgr: hsl( 250, 10%, 5% );
   --body-fgr: hsl( 0, 0%, 100% );
-  --alt-nav-bgr: hsl( 210, 55%, 34% );
-  --alt-body-bgr: hsl( 300, 40%, 20% );
-  --alt-nav-height: 10rem;
-  --alt-brand-con-bgr: hsla( 20, 20%, 80%, 1.0 );
-  --alt-links-con-bgr: hsla( 20, 20%, 70%, 1.0 );
-  --alt-srch-con-width: 11.5rem;
-  --alt-srch-input-height: calc( .29 * var( --alt-nav-height ));
-  --alt-srch-ryteoff: calc( .15 * var( --alt-srch-con-width ));
-  --alt-duration: 5s;
-  --alt-laser-from: 0;
-  --alt-laser-to:   100%;
 }
 /**************************************************************/
 html {
@@ -31,7 +20,6 @@ html, body {
 body {
   background: var( --body-bgr );
   color: var( --body-fgr );
-  font-size: 2rem;
 }
 /**************************************************************/
 input {
@@ -45,148 +33,18 @@ a {
     color: inherit;
 }
 /**************************************************************/
-.alt-cont {
-    display: flex;
-    flex-direction: column;
-}
-/**************************************************************/
-.alt-body {
-  background: var( --alt-body-bgr );
-  height: calc( 0.4 * var( --alt-nav-height ));
-}
-/**************************************************************/
-.alt-nav {
-  background: var( --alt-nav-bgr );
-  height: var( --alt-nav-height );
-  display: grid;
-  grid-template-rows: 100%;
-  grid-template-columns: var( --alt-nav-height ) 
-                         auto
-                         var( --alt-srch-con-width );
-}
-/**************************************************************/
-.alt-brand-con {
-  background: var( --alt-brand-con-bgr );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-column: 1;
-}
-.alt-brand-con > svg {
-  background: hsla( 350, 50%, 20%, 1.0 );
-}
-.alt-brand-con > svg > rect {
-    x: 0;
-    width: 100%;
-}
-.alt-brand-con > svg > circle {
-    cx: 100;
-    cy: 148;
-    stroke: hsla( 0, 50%, 50%, .9 );
-    stroke-width: 1px;
-}
 /**************************************************************/
 /**************************************************************/
-.alt-links-con {
-  display: grid;
-  grid-template-columns: repeat( 8, 1fr );
-  grid-template-rows: repeat( 8, 1fr );
-  background: center no-repeat url( "pix/alt-background.svg" );
-  background-size: cover;
-  grid-column: 2;
-  position: relative;
-}
-/***************************************************************
- * L A S E R
- **************************************************************/
-.alt-laser {
-    height: 100%;
-    width: 2px;
-    background: white;
-    position: absolute;
-    grid-row-start: 4;
-    grid-row-end: 5;
-    left: 0;
-    z-index: 1;
-}
-.alt-scan { /* a n i m a t i o n */
-    animation-name: altscan;
-    animation-duration: var( --alt-duration );
-    animation-delay: 0.3s;
-    animation-iteration-count: 1;
-    animation-timing-function: linear;
-}
-@keyframes altscan {
-    from { left: var( --alt-laser-from ); }
-    to {   left: var( --alt-laser-to ); }
-}
+/**************************************************************/
+/**************************************************************/
+/**************************************************************/
 /***************************************************************
  **************************************************************/
-.alt-link {
-    width: 8rem;
-    height: 2.5rem;
-    background: var( --alt-links-con-bgr );
-    margin-top: 0.5rem;
-    font-size: 1.4rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var( --alt-body-bgr );
-    border: 2px solid hsl( 300, 18%, 80% );
-    border-radius: 10rem;
-    grid-row: 4;
-    grid-column: 2;
-    z-index: 2;
-}
-.alt-link.lasers {
-    background: hsla( 25, 25%, 60%, 1.0 );
-    margin-top: 1.2rem;
-    border: 2px solid hsl( 300, 29%, 40% );
-    grid-column: 4;
-}
-.alt-link.the {
-    margin-bottom: 1.5rem;
-    color:  hsl( 200, 89%, 60% );
-    border: 2px solid hsl( 210, 100%, 80% );
-    background: hsl( 200, 50%, 20% );
-    grid-column: 6;
-}
-.alt-point {
-    grid-column: 7;
-    grid-row-start: 7;
-    grid-row-end: 9;
-    background: var( --alt-body-bgr );
-}
+/***************************************************************
+ **************************************************************/
 /**************************************************************/
-.alt-srch-con {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: hsl( 300, 18%, 60% );
-  position: relative;
-  grid-column: 3;
-}
 /**************************************************************/
-.alt-srch-input {
-  padding-left: 1rem;
-  font-size: 1.2rem;
-  height: var( --alt-srch-input-height ); 
-  width: calc( 0.7 * var( --alt-srch-con-width ));
-  background: black;
-  border-radius: 10rem 10rem 10rem 4rem;
-  color: red;
-  position: absolute;
-  right: var( --alt-srch-ryteoff );
-}
 /**************************************************************/
-.alt-srch-button {
-  font-size: 1.4rem;
-  color: var( --alt-brand-con-bgr );
-  opacity: .65;
-  font-weight: 1000;
-  position: absolute;
-  right: calc( 1.6 * var( --alt-srch-ryteoff ));
-}
 /**************************************************************/
 /**************************************************************/
 /**************************************************************
@@ -194,45 +52,6 @@ a {
      やまぐちさんも　パーテイーに　いきます。
  **************************************************************/
 @media( max-width: 600px ){
-  .alt-nav {
-    grid-template-columns: 100%;
-    grid-template-rows: 200px 300px 100px;
-    height: auto;
-  } 
-  .alt-brand-con {
-      grid-column: 1;
-      grid-row: 1;
-  }
-  .alt-links-con {
-      min-height: 10rem;
-      grid-column: 1;
-      grid-row: 2;
-  }                      
-  .alt-srch-con {
-      grid-column: 1;
-      grid-row: 3;
-  }
-  .alt-link {
-      grid-column: 4;
-      grid-row: 2;
-  }
-  .alt-link.lasers {
-      grid-column: 3;
-      grid-row: 4;
-  }
-  .alt-link.the {
-      grid-column: 4;
-      grid-row: 6;
-  }
-  .alt-laser {
-      display: none;
-  }
-  .alt-point {
-      grid-column-start: 6;
-      grid-column-end: 9;
-      grid-row: 8;
-      background: hsl( 300, 18%, 60% );
-  }
 }
 /***************************************************************
  * log:
