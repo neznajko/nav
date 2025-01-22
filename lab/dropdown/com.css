@@ -1,0 +1,28 @@
+:root {
+    --body-bgr: hsl(  18, 20%, 20% );
+    --body-fgr: hsl( 202, 13%, 80% );
+}
+html {
+    height: 100%;
+}
+html, body, a, ul, li, nav {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    min-height: 100%;
+    background-color: var( --body-bgr );
+    color: var( --body-fgr );
+}
+input, button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+a {
+    text-decoration: none;
+}

@@ -98,7 +98,7 @@ a {
 .alt-laser {
     height: 100%;
     width: 2px;
-    background: white;
+    background: hsl( 0, 0%, 100%);
     position: absolute;
     grid-row-start: 4;
     grid-row-end: 5;

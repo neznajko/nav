@@ -1,0 +1,348 @@
+/**************************************************************/
+/**************************************************************/
+/**************************************************************/
+/**************************************************************/
+:root {
+  --body-bgr:               hsl( 0, 0%, 10% );
+  --body-fgr:               hsl( 0, 0%, 100% );
+  --dropdown-brand-size: 7.5rem;  
+  --dropdown-brand-padding: calc(var(--dropdown-brand-size)/16);
+  --dropdown-brand-con-bgr: hsla( 0, 0%, 20%, 1.0 );
+  --dropdown-brand-bgr:     hsla( 0, 0%, 50%, 1.0 );
+  --dropdown-brand-fgr:     hsla( 0, 0%, 10%, 1.0 );
+  --dropdown-brand-border: 1px solid var(--dropdown-brand-con-bgr);
+  --dropdown-brand-grad-1:  hsla( 0, 0%, 40%, .50 ) 10%;
+  --dropdown-brand-grad-2:  hsla( 0, 0%, 15%, .70 ) 50%;
+  --dropdown-links-bgr:     hsla( 0, 0%, 15%, 1.0 );
+  --dropdown-search-con-bgr: var(--dropdown-links-bgr);
+  --dropdown-search-height: calc(var(--dropdown-brand-size)/2);
+  --dropdown-search-width: calc(var(--dropdown-brand-size)*1.2);
+  --dropdown-search-fontsiz: calc(var(--dropdown-search-height)/2.8);
+  --dropdown-search-radius: calc(var(--dropdown-search-height)/2);
+  --dropdown-search-bgr:      hsla( 0, 0%, 35%, 1.0 );
+  --dropdown-placeholder-fgr: hsla( 0, 0%, 20%, 0.8 );
+  --dropdown-button-fgr: var(--dropdown-search-bgr);
+  --dropdown-button-bgr:      hsla( 0, 0%,  8%, 1.0 );
+  --dropdown-search-fgr: var(--dropdown-button-bgr);
+  --dropdown-button-width: calc(var(--dropdown-search-width)/2);
+  --dropdown-padding-left: 1.5rem;
+  --dropdown-body-height: 3.8rem;
+  --dropdown-bgr:      hsla( 15, 25%, 20%, 0.9 );
+  --dropdown-fgr:      hsla( 20, 30%, 40%, 0.8 );
+  --dropdown-link-fgr: hsla( 20, 25%, 70%, 0.8 );
+  --dropdown-font-size: calc(var(--dropdown-brand-size)/6);
+}
+html {
+  height: 100%;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+  background: var( --body-bgr );
+  color: var( --body-fgr );
+  font-size: 2rem;
+}
+input {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+a {
+    text-decoration: none;
+}
+.dropdown_menu > span { /* should be renamed spam */
+    display: none;
+}
+.dropdown_plus > span {
+    display: none;
+}
+.dropdown-con {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto var( --dropdown-body-height );
+    background: blue;
+}
+.dropdown-nav {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 100%;
+}
+
+.dropdown-body {
+    background-color: hsl( 20, 50%, 10% );
+    color: hsl( 350, 10%, 50% );
+    font-size: calc(var(--dropdown-body-height)/2);
+    display: flex;
+    align-items: center;
+    padding-left: var( --dropdown-padding-left );
+    font-family: "Dancing Script";
+}
+
+.dropdown-brand-con {
+    background: var( --dropdown-brand-con-bgr );
+    padding: var( --dropdown-brand-padding );
+    position: relative;
+}
+/**************************************************************
+ ************************************************************** 
+ ************************************************************** 
+ ************************************************************** 
+ **************************************************************/
+.dropdown-links-con {
+    background: var( --dropdown-links-bgr );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.dropdown {
+    position: absolute;
+    top: calc( var( --dropdown-brand-size ) / 2.8 );
+    background: var( --dropdown-bgr );
+/*  height: calc( var( --dropdown-brand-size ) * 1.0 );*/
+    width: calc( var( --dropdown-brand-size ) * 1.5 );
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    /* work with 50px, then replace with variable */
+    grid-template-rows: 50px auto auto;
+    grid-template-areas:
+        'dropdown_link dropdown_anime'
+        'dropdown_menu dropdown_menu'
+        'dropdown_plus dropdown_plus';
+    font-size: var( --dropdown-font-size );
+    color: var( --dropdown-fgr );
+    font-family: serif;
+    border-radius: 20px;
+    margin-top: -10px;
+    margin-left: -20px;
+}
+.dropdown_link {
+    color: inherit;
+    grid-area: dropdown_link;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var( --dropdown-link-fgr );
+    background: var( --dropdown-fgr );
+    font-style: italic;
+    border-radius: 20px 0 0 20px;
+}
+.dropdown_anime {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: cyan;
+    grid-area: dropdown_anime;
+    background: hsl( 0, 30%, 25% );
+    border-radius: 0 20px 20px 0;
+}
+.dropdown_menu {
+    color: inherit;
+    grid-area: dropdown_menu;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0; 
+}
+.dropdown_plus {
+    color: inherit;
+    grid-area: dropdown_plus;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*border-top: 1px solid red;*/
+    height: 0;
+}
+@keyframes cw {
+    from {
+        transform: rotate( 0deg );
+    }
+    to {
+        transform: rotate( 90deg );
+    }
+}
+@keyframes ccw {
+    from {
+        transform: rotate( 90deg );
+    }
+    to {
+        transform: rotate( 0deg );
+    }
+}
+.cw {
+    animation: cw 0.5s linear 1;
+}
+.ccw {
+    animation: ccw 0.5s linear 1;
+}
+@keyframes open-menu-keyframes {
+    from {
+        height: 0;
+    } 
+    to {
+        height: 50px;    
+    }
+}
+.open-menu {
+    animation: open-menu-keyframes 0.5s linear 1;
+}
+@keyframes close-menu-keyframes {
+    from {
+        height: 50px;
+    } 
+    to {
+        height: 0;    
+    }
+}
+.close-menu {
+    animation: close-menu-keyframes 0.5s linear 1;
+}
+/**************************************************************
+ ************************************************************** 
+ ************************************************************** 
+ ************************************************************** 
+ **************************************************************/
+.dropdown-search-con {
+    display: flex;
+    align-items: center;
+    background: var( --dropdown-search-con-bgr );
+    padding-right: calc( 1.8 * var( --dropdown-padding-left ));
+}
+
+.dropdown-brand {
+    position: relative;
+    width: var( --dropdown-brand-size );
+    height: var( --dropdown-brand-size );
+    background: var( --dropdown-brand-bgr );
+    display: grid;
+    grid-template-rows: repeat( 3, 1fr );
+    grid-template-columns: repeat( 3, 1fr );
+    font-size: calc( var( --dropdown-brand-size ) / 7 );
+    color: var( --dropdown-brand-fgr );
+}
+/***************************************************************
+ * bug namba #1
+ * position: absolute
+ **************************************************************/
+.dropdown-gradient {
+    position: absolute;
+    width: var( --dropdown-brand-size );
+    height: var( --dropdown-brand-size ); 
+    top: var( --dropdown-brand-padding );
+    background: radial-gradient( 
+        var( --dropdown-brand-grad-1 ),
+        var( --dropdown-brand-grad-2 )
+    );
+}
+/**************************************************************/
+.dropdown-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 
+    var( --dropdown-brand-border );
+  border-bottom: 
+    var( --dropdown-brand-border );
+}
+.dropdown-ryte {
+  border-right: none;
+}
+.dropdown-bot {
+  border-bottom: none;
+}
+
+.dropdown-search {
+    height: var( --dropdown-search-height );
+    width: var( --dropdown-search-width );
+    border-radius: var( --dropdown-search-radius ) 0
+                   0 var( --dropdown-search-radius );
+    display: block;
+    padding-left: var( --dropdown-search-radius );
+    font-size: var( --dropdown-search-fontsiz );
+    background: var( --dropdown-search-bgr );
+}
+
+.dropdown-search::placeholder {
+    color: var( --dropdown-placeholder-fgr );
+    font-style: italic;
+}
+
+.dropdown-search-button {
+    height: var( --dropdown-search-height );
+    width: var( --dropdown-button-width );
+    background: var( --dropdown-button-bgr );
+    color: var( --dropdown-button-fgr );
+    border-radius: 0 var( --dropdown-search-radius )
+                   var( --dropdown-search-radius ) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: calc( var( --dropdown-search-radius ) * 0.2 );
+    font-size: calc( var( --dropdown-search-height ) / 2 );
+}
+
+@media( max-width: 600px ){
+
+    .dropdown-nav {
+        grid-template-columns: 100%;
+        grid-template-rows: auto 2fr 1fr;
+    }
+    .dropdown {
+        position: static;
+        width: 80%;
+        margin: 0;
+    }
+    .dropdown-search-con {
+        padding-left: var( --dropdown-padding-left );
+        padding-bottom: var( --dropdown-padding-left );
+    }
+}
+/**************************************************************/
+/**************************************************************/
+/**************************************************************/
+/**************************************************************/
+/**************************************************************/
+/**************************************************************/
+/***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ ***************************************************************
+ **************************************************************/
+/* log: Before about a year or something there was some news
+ * about a girl at age of 10 or something that had committed
+ * suicide being bullied at school. So why people behave
+ * arrogantly? Keep it in mind that the cool kids are not the
+ * only examples here there are many other famous bullies out
+ * there not to mention the Hollywood Stars and victims being
+ * not only children but also transgenders countries not to
+ * mention rabbits, etc. I think this is an inadequate behavior
+ * from people that are put by society or by classmates or by
+ * others in a position they don't deserve or they don't belong
+ * to so being afraid of not looking stupid or awkward they
+ * overreact by being arrogant thinking we are high in the
+ * hierarchy so let's keep the distance and it's sad boring and
+ * pathetic. The only way to handle greatness is to be great
+ * there is no other way */
+/**************************************************************/
