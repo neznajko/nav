@@ -5,6 +5,17 @@
 :root {
   --body-bgr: hsl( 230, 100%, 12% );
   --body-fgr: hsl( 0, 0%, 100% );
+  
+  --dropdown-brand-con-bgr: hsl( 0, 0%, 20% );
+  --dropdown-brand-con-size: 7.8rem;
+  
+  --dropdown-brand-size: 7.5rem;  
+  --dropdown-brand-bgr: hsl( 0, 0%, 50% );
+  --dropdown-brand-fgr: hsl( 0, 0%, 10% );
+  --dropdown-brand-border: 1px solid var(--dropdown-brand-con-bgr);
+
+  --dropdown-brand-grad-1:  hsla( 0, 0%, 40%, .50 ) 10%;
+  --dropdown-brand-grad-2:  hsla( 0, 0%, 15%, .70 ) 50%;
 }
 html {
   height: 100%;
@@ -28,18 +39,63 @@ input {
 a {
     text-decoration: none;
 }
+/* ////////////////////////////////////////////////////////// */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 /* ##########################################################
    ########################################################## */
 .dropdown-con {
     display: grid;
-    grid-template-columns: 8rem auto 10rem;
-    grid-template-rows: 8rem 3rem;
+    grid-template-columns: var(--dropdown-brand-con-size) auto 10rem;
+    grid-template-rows: var(--dropdown-brand-con-size) 3rem;
 }
+/* ////////////////////////////////////////////////////////// */
+/* // B / r / a / n / d ///////////////////////////////////// */
 /* ////////////////////////////////////////////////////////// */
 .dropdown-brand-con {
     grid-row: 1;
     grid-column: 1;
-    background: hsl( 30, 50%, 15% );
+    background: var( --dropdown-brand-con-bgr );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown-brand {
+    position: relative;
+    width: var( --dropdown-brand-size );
+    height: var( --dropdown-brand-size );
+    background: var( --dropdown-brand-bgr );
+    display: grid;
+    grid-template-rows: repeat( 3, 1fr );
+    grid-template-columns: repeat( 3, 1fr );
+    font-size: calc( var( --dropdown-brand-size ) / 7 );
+    color: var( --dropdown-brand-fgr );
+}
+.dropdown-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: var( --dropdown-brand-border );
+    border-bottom: var( --dropdown-brand-border );
+}
+.dropdown-ryte {
+    border-right: none;
+}
+.dropdown-bot {
+    border-bottom: none;
+}
+.dropdown-gradient {
+    position: absolute;
+    top: 0;
+    width: var( --dropdown-brand-size );
+    height: var( --dropdown-brand-size ); 
+    background: radial-gradient( 
+        var( --dropdown-brand-grad-1 ),
+        var( --dropdown-brand-grad-2 )
+    );
 }
 /* ========================================================== */
 .dropdown-search-con {
@@ -62,21 +118,36 @@ a {
     grid-template-columns: repeat( 12, 1fr );
     grid-template-rows: repeat( 4, 1fr );
 }
+/* ---------------------------------------------------------- */
+.dropdown-item-1 {
+    grid-row: 1/-1;
+    grid-column:1;
+}
 /* __________________________________________________________ */
 .dropdown-item-2 {
     grid-row: 1/3;
     grid-column: 2;
 }
 /* `````````````````````````````````````````````````````````` */
-.svg-item {
-    widht: 100%;
-    height: 100%;
+.dropdown-item-3 {
+    grid-row: 3/-1;
+    grid-column: 2/4;
+}
+/* ========================================================== */
+.dropdown-item-4 {
+    grid-column: 4/-1;
+    grid-row: 1/-1;
 }
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 @media( max-width: 600px ){
     .dropdown-con {
         grid-template-columns: 100%;
-        grid-template-rows: 8rem 16rem 6rem 4rem;
+        grid-template-rows: var(--dropdown-brand-con-size)
+                            16rem 6rem 4rem;
+    }
+    .dropdown-brand-con {
+        justify-content: end;
+        padding-right: 0.1rem;
     }
     .dropdown-search-con {
         grid-row: 3;
@@ -92,8 +163,21 @@ a {
         grid-template-columns: repeat( 4, 1fr );
         grid-template-rows: repeat( 12, 1fr );
     }
+    .dropdown-item-1 {
+        grid-row:1/-1;
+        grid-column: 1;
+    }
     .dropdown-item-2 {
         grid-row: 1/4;
+        grid-column: 2;
+    }
+    .dropdown-item-3 {
+        grid-row: 1/4;
+        grid-column: 3/-1;
+    }
+    .dropdown-item-4 {
+        grid-row: 4/-1;
+        grid-column: 2/-1;
     }
 }
 /***************************************************************
