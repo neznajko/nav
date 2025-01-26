@@ -16,6 +16,8 @@
 
   --dropdown-brand-grad-1:  hsla( 0, 0%, 40%, .50 ) 10%;
   --dropdown-brand-grad-2:  hsla( 0, 0%, 15%, .70 ) 50%;
+
+  --dropdown-search-fgr: hsl( 0, 0%, 100%, .6 );
 }
 html {
   height: 100%;
@@ -49,8 +51,8 @@ a {
    ########################################################## */
 .dropdown-con {
     display: grid;
-    grid-template-columns: var(--dropdown-brand-con-size) auto 10rem;
-    grid-template-rows: var(--dropdown-brand-con-size) 3rem;
+    grid-template-columns: var(--dropdown-brand-con-size) auto;
+    grid-template-rows: var(--dropdown-brand-con-size) 4rem;
 }
 /* ////////////////////////////////////////////////////////// */
 /* // B / r / a / n / d ///////////////////////////////////// */
@@ -99,15 +101,47 @@ a {
 }
 /* ========================================================== */
 .dropdown-search-con {
-    grid-row: 1;
-    grid-column: 3;
-    background: hsl( 240, 50%, 20% );
+    position: absolute;
+    height: 100%;
+    width: 16rem;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 1rem;
+}
+.dropdown-search {
+    height: 2rem;
+    width: 60%;
+    padding-left: 1rem;
+    background: none;
+    border: 1px solid var( --dropdown-search-fgr );
+    border-radius: 1rem;
+    color: var( --dropdown-search-fgr );
+}
+.dropdown-search::placeholder {
+    color: var( --dropdown-search-fgr );
+}
+.dropdown-search-button {
+    width: 20%;
+    height: 2rem;
+    color: var( --dropdown-search-fgr );
+    background: none;
+    padding-left: 1rem;
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .dropdown-body {
     grid-row: 2;
     grid-column: 1/-1;
-    background: hsl( 30, 80%, 20% );
+    color: hsl( 10, 20%, 40% );
+    background: hsl( 250, 80%, 22% );
+    display: flex;
+    align-items: center;
+    font-family: "Dancing Script";
+    padding-left: 1.2rem;
+    padding-bottom: .5rem;
+    font-size: 1.8rem;
 }
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
 .dropdown-links-con {
@@ -137,24 +171,27 @@ a {
 .dropdown-item-4 {
     grid-column: 4/-1;
     grid-row: 1/-1;
+    position: relative;
 }
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 @media( max-width: 600px ){
     .dropdown-con {
         grid-template-columns: 100%;
         grid-template-rows: var(--dropdown-brand-con-size)
-                            16rem 6rem 4rem;
+                            16rem 4rem;
     }
     .dropdown-brand-con {
         justify-content: end;
         padding-right: 0.1rem;
     }
+    /*
     .dropdown-search-con {
         grid-row: 3;
         grid-column: 1;
     }
+   */
     .dropdown-body {
-        grid-row: 4;
+        grid-row: 3;
         grid-column: 1;
     }
     .dropdown-links-con {
