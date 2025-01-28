@@ -102,10 +102,6 @@ bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
       </div>
     </div>
     <!-- -->
-    <!-- [ S e a r c h C o n ] --------------------------------
-    <div class="dropdown-search-con">
-    </div>
-    <!-- -->
     <!-- [ B o d y ] ------------------------------------------>
     <div class="dropdown-body"> dropdown </div>
     <!-- -->
@@ -168,16 +164,31 @@ bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
             <circle cx="160%" cy="140" r="180%" stroke-opacity="0.1"/>
           </g>
         </svg>
+        <!-- [ S e a r c h C o n ] ---------------------------->
         <div class="dropdown-search-con">
-          <input class="dropdown-search"
-                 type="text"
+          <input type="text"
+                 class="dropdown-search"
                  placeholder="search"/>
           <a href="#" class="dropdown-search-button">
-            <i class="bi bi-search"></i>
+            <i class="bi bi-search"> </i>
           </a>
-        </div>
-      </div>
-    </div>
+        </div> <!-- dropdown-search-con ----------------------->
+      </div> <!-- dropdown-item-4 ----------------------------->
+      <!-- (1) A: きのう、何時間勉強しましたか。
+               B: 一時間ぐらい勉強しました。
+        -->
+      <div class="dropdown-hook">
+        <div class="dropdown">
+          <div class="dropdown-frame"> </div>
+          <div class="dropdown-menu-frame"> </div>
+          <div class="dropdown-plus-frame"> </div>
+          <div class="dropdown-link center"> dropdown </div>
+          <div class="dropdown-anime center">
+            <i class="bi bi-caret-right-fill"> </i>
+          </div>
+        </div> <!-- dropdown ---------------------------------->
+      </div> <!-- dropdown-hook ------------------------------->
+    </div> <!-- dropdown-links-con ---------------------------->
     <!-- -->
   </div>
   <script src="lib/bootstrap/bootstrap.bundle.js"></script>
