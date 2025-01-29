@@ -18,6 +18,8 @@
   --dropdown-brand-grad-2:  hsla( 0, 0%, 15%, .70 ) 50%;
 
   --dropdown-color: hsl( 280, 10%, 50% );
+
+  --dropdown-dh: 1.67rem;
 }
 html {
   height: 100%;
@@ -194,9 +196,9 @@ a {
     left: 0;
     display: grid;
     width: 10rem;
-    height: 10rem;
     grid-template-columns: 74% auto;
-    grid-template-rows: repeat( 6, 1fr );
+    grid-template-rows: repeat( 2, var( --dropdown-dh ))
+                        repeat( 4, auto );
 }
 .dropdown-frame {
     grid-row: 1/3;
@@ -212,10 +214,12 @@ a {
 .dropdown-menu-frame.minus {
     grid-row: 2/5;
     grid-column: 1/-1;
+    height: calc( 1.5 * var( --dropdown-dh ));
 }
 .dropdown-menu-frame.plus {
-    grid-row: 4/7;
+    grid-row: 2/7;
     grid-column: 1/-1;
+    height: calc( 2 * var( --dropdown-dh ));
 }
 .dropdown-link {
     grid-row: 1/3;
