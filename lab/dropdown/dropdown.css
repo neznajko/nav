@@ -17,7 +17,7 @@
   --dropdown-brand-grad-1:  hsla( 0, 0%, 40%, .50 ) 10%;
   --dropdown-brand-grad-2:  hsla( 0, 0%, 15%, .70 ) 50%;
 
-  --dropdown-search-fgr: hsl( 0, 0%, 100%, .6 );
+  --dropdown-color: hsl( 280, 10%, 50% );
 }
 html {
   height: 100%;
@@ -40,6 +40,7 @@ input {
 }
 a {
     text-decoration: none;
+    color: inherit;
 }
 /* ////////////////////////////////////////////////////////// */
 .center {
@@ -116,17 +117,17 @@ a {
     width: 60%;
     padding-left: 1rem;
     background: none;
-    border: 1px solid var( --dropdown-search-fgr );
+    border: 1px solid var( --dropdown-color );
     border-radius: 1rem;
-    color: var( --dropdown-search-fgr );
+    color: var( --dropdown-color );
 }
 .dropdown-search::placeholder {
-    color: var( --dropdown-search-fgr );
+    color: var( --dropdown-color );
 }
 .dropdown-search-button {
     width: 20%;
     height: 2rem;
-    color: var( --dropdown-search-fgr );
+    color: var( --dropdown-color );
     background: none;
     padding-left: 0.8rem;
 }
@@ -194,36 +195,63 @@ a {
     display: grid;
     width: 10rem;
     height: 10rem;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 74% auto;
     grid-template-rows: repeat( 6, 1fr );
 }
 .dropdown-frame {
     grid-row: 1/3;
     grid-column: 1/-1;
-    border: 1px solid white;
+    border: 1px solid var( --dropdown-color );
     border-radius: 1rem;
 }
 .dropdown-menu-frame {
-    grid-row: 2/5;
-    grid-column: 1/-1;
-    border: 1px solid white;
+    border: 1px solid var( --dropdown-color );
     border-radius: 0 0 1rem 1rem;
     border-top: none;
 }
-.dropdown-plus-frame {
+.dropdown-menu-frame.minus {
+    grid-row: 2/5;
+    grid-column: 1/-1;
+}
+.dropdown-menu-frame.plus {
     grid-row: 4/7;
     grid-column: 1/-1;
-    border: 1px solid white;
-    border-radius: 0 0 1rem 1rem;
-    border-top: none;
 }
 .dropdown-link {
     grid-row: 1/3;
     grid-column: 1;
+    font-family: "Orbitron", serif;
+    color: hsl( 24, 100%, 20% );
+    justify-content: end;
 }
 .dropdown-anime {
     grid-row: 1/3;
     grid-column: 2;
+    justify-content: start;
+    color: hsl( 24, 100%, 25% );
+}
+/* %%%%%%( Animation )%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
+@keyframes clockwise {
+    0% {
+        transform: rotate( 0deg );
+    }
+    100% {
+        transform: rotate( 90deg );
+    }
+}
+.clockwise {
+    animation: clockwise 0.5s linear 1;
+}
+@keyframes anticlockwise {
+    0% {
+        transform: rotate( 90deg );
+    }
+    100% {
+        transform: rotate( 0deg );
+    }
+}
+.anticlockwise {
+    animation: anticlockwise 0.5s linear 1;
 }
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 @media( max-width: 600px ){
