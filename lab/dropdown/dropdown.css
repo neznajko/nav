@@ -22,9 +22,10 @@
   --dropdown-dh: 1.67rem; /* dropdown-frame cell height */
   --drop: 0.5rem;
   --minus-min: calc( var( --dropdown-dh ) + var( --drop ));
-  --plus-min:  calc( var( --minus-min ) + var( --drop ));
   --minus-max: calc( 3 * var( --dropdown-dh ));
+  --plus-min:  calc( var( --minus-min ) + var( --drop ));
   --plus-mid:  calc( var( --minus-max ) + var( --drop ));
+  --plus-max:  calc( 5 * var( --dropdown-dh ));
  }
 html {
   height: 100%;
@@ -262,27 +263,61 @@ a {
 .anticlockwise {
     animation: anticlockwise 0.5s linear 1;
 }
-@keyframes plus_min_to_mid {
+@keyframes plus_min_to_max {
     0% {
         height: var( --plus-min );
     }
-    100% {
+    50% {
         height: var( --plus-mid );
     }
+    100% {
+        height: var( --plus-max );
+    }
 }
-.plus_min_to_mid {
-    animation: plus_min_to_mid 0.8s linear 1;
+.plus_min_to_max {
+    animation: plus_min_to_max 1.6s linear 1;
+}
+@keyframes plus_max_to_min {
+    0% {
+        height: var( --plus-max );
+    }
+    50% {
+        height: var( --plus-mid );
+    }
+    100% {
+        height: var( --plus-min );
+    }
+}
+.plus_max_to_min {
+    animation: plus_max_to_min 1.6s linear 1;
 }
 @keyframes minus_min_to_max {
     0% {
         height: var( --minus-min );
+    }
+    50% {
+        height: var( --minus-max );
     }
     100% {
         height: var( --minus-max );
     }
 }
 .minus_min_to_max {
-    animation: minus_min_to_max 0.8s linear 1;
+    animation: minus_min_to_max 1.6s linear 1;
+}
+@keyframes minus_max_to_min {
+    0% {
+        height: var( --minus-max );
+    }
+    50% {
+        height: var( --minus-max );
+    }
+    100% {
+        height: var( --minus-min );
+    }
+}
+.minus_max_to_min {
+    animation: minus_max_to_min 1.6s linear 1;
 }
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 @media( max-width: 600px ){

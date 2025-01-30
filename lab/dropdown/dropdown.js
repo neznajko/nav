@@ -9,19 +9,29 @@ const plus = query( ".plus" );
 const minus_min = getProp( ROOT, "--minus-min" );
 const minus_max = getProp( ROOT, "--minus-max" );
 const plus_min = getProp( ROOT, "--plus-min" );
-const plus_mid = getProp( ROOT, "--plus-mid" );
+const plus_max = getProp( ROOT, "--plus-max" );
 ////////////////////////////////////////////////////////////////
 let hasDropped = false;
 ////////////////////////////////////////////////////////////////
 link.addEventListener( "click", e => {
     if( hasDropped ){
-        icon.classList.remove( "clockwise" );
+        icon.classList.remove(  "clockwise" );
         icon.classList.add( "anticlockwise" );
+        
+        minus.classList.remove( "minus_min_to_max" );
+        minus.classList.add(    "minus_max_to_min" );
+
+        plus.classList.remove( "plus_min_to_max" );
+        plus.classList.add(    "plus_max_to_min" );
     } else {
-        icon.classList.add( "clockwise" );
         icon.classList.remove( "anticlockwise" );
-        minus.classList.add( "minus_min_to_max" );
-        plus.classList.add( "plus_min_to_mid" );
+        icon.classList.add(        "clockwise" );
+        
+        minus.classList.remove( "minus_max_to_min" );
+        minus.classList.add(    "minus_min_to_max" );
+
+        plus.classList.remove( "plus_max_to_min" );
+        plus.classList.add(    "plus_min_to_max" );
     }
 });
 ////////////////////////////////////////////////////////////////
@@ -35,11 +45,19 @@ icon.addEventListener( "animationend", e => {
 });
 ////////////////////////////////////////////////////////////////
 plus.addEventListener( "animationend", e => {
-    plus.style.height = plus_mid;
+    if( hasDropped ){
+        plus.style.height = plus_max;
+    } else {
+        plus.style.height = plus_min;
+    }
 });
 ////////////////////////////////////////////////////////////////
 minus.addEventListener( "animationend", e => {
-    minus.style.height = minus_max;
+    if( hasDropped ){
+        minus.style.height = minus_max;
+    } else {
+        minus.style.height = minus_min;
+    }
 });
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
