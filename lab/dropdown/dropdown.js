@@ -1,8 +1,15 @@
 ////////////////////////////////////////////////////////////////
 console.log( "dropdown .." );
 ////////////////////////////////////////////////////////////////
-const link = document.querySelector( ".dropdown-link" );
-const icon = document.querySelector( ".dropdown-anime i" );
+const link = query( ".dropdown-link" );
+const icon = query( ".dropdown-anime i" );
+const minus = query( ".minus" );
+const plus = query( ".plus" );
+////////////////////////////////////////////////////////////////
+const minus_min = getProp( ROOT, "--minus-min" );
+const minus_max = getProp( ROOT, "--minus-max" );
+const plus_min = getProp( ROOT, "--plus-min" );
+const plus_mid = getProp( ROOT, "--plus-mid" );
 ////////////////////////////////////////////////////////////////
 let hasDropped = false;
 ////////////////////////////////////////////////////////////////
@@ -13,6 +20,8 @@ link.addEventListener( "click", e => {
     } else {
         icon.classList.add( "clockwise" );
         icon.classList.remove( "anticlockwise" );
+        minus.classList.add( "minus_min_to_max" );
+        plus.classList.add( "plus_min_to_mid" );
     }
 });
 ////////////////////////////////////////////////////////////////
@@ -25,6 +34,13 @@ icon.addEventListener( "animationend", e => {
     hasDropped = !hasDropped;
 });
 ////////////////////////////////////////////////////////////////
+plus.addEventListener( "animationend", e => {
+    plus.style.height = plus_mid;
+});
+////////////////////////////////////////////////////////////////
+minus.addEventListener( "animationend", e => {
+    minus.style.height = minus_max;
+});
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////

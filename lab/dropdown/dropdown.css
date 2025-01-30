@@ -19,8 +19,13 @@
 
   --dropdown-color: hsl( 280, 10%, 50% );
 
-  --dropdown-dh: 1.67rem;
-}
+  --dropdown-dh: 1.67rem; /* dropdown-frame cell height */
+  --drop: 0.5rem;
+  --minus-min: calc( var( --dropdown-dh ) + var( --drop ));
+  --plus-min:  calc( var( --minus-min ) + var( --drop ));
+  --minus-max: calc( 3 * var( --dropdown-dh ));
+  --plus-mid:  calc( var( --minus-max ) + var( --drop ));
+ }
 html {
   height: 100%;
 }
@@ -214,12 +219,12 @@ a {
 .dropdown-menu-frame.minus {
     grid-row: 2/5;
     grid-column: 1/-1;
-    height: calc( 1.5 * var( --dropdown-dh ));
+    height: var( --minus-min );
 }
 .dropdown-menu-frame.plus {
     grid-row: 2/7;
     grid-column: 1/-1;
-    height: calc( 2 * var( --dropdown-dh ));
+    height: var( --plus-min );
 }
 .dropdown-link {
     grid-row: 1/3;
@@ -256,6 +261,28 @@ a {
 }
 .anticlockwise {
     animation: anticlockwise 0.5s linear 1;
+}
+@keyframes plus_min_to_mid {
+    0% {
+        height: var( --plus-min );
+    }
+    100% {
+        height: var( --plus-mid );
+    }
+}
+.plus_min_to_mid {
+    animation: plus_min_to_mid 0.8s linear 1;
+}
+@keyframes minus_min_to_max {
+    0% {
+        height: var( --minus-min );
+    }
+    100% {
+        height: var( --minus-max );
+    }
+}
+.minus_min_to_max {
+    animation: minus_min_to_max 0.8s linear 1;
 }
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 @media( max-width: 600px ){
