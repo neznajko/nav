@@ -5,6 +5,8 @@ const link = query( ".dropdown-link" );
 const icon = query( ".dropdown-anime i" );
 const minus = query( ".minus" );
 const plus = query( ".plus" );
+const minus_link = query( ".dropdown-menu-item.minus" );
+const plus_link = query( ".dropdown-menu-item.plus" );
 ////////////////////////////////////////////////////////////////
 const minus_min = getProp( ROOT, "--minus-min" );
 const minus_max = getProp( ROOT, "--minus-max" );
@@ -23,6 +25,10 @@ link.addEventListener( "click", e => {
 
         plus.classList.remove( "plus_min_to_max" );
         plus.classList.add(    "plus_max_to_min" );
+        plus_link.style.display = "none";
+
+        minus_link.classList.remove( "minus_down" );
+        minus_link.classList.add( "minus_up" );
     } else {
         icon.classList.remove( "anticlockwise" );
         icon.classList.add(        "clockwise" );
@@ -32,6 +38,9 @@ link.addEventListener( "click", e => {
 
         plus.classList.remove( "plus_max_to_min" );
         plus.classList.add(    "plus_min_to_max" );
+
+        minus_link.classList.remove( "minus_up" );
+        minus_link.classList.add( "minus_down" );
     }
 });
 ////////////////////////////////////////////////////////////////
@@ -47,6 +56,7 @@ icon.addEventListener( "animationend", e => {
 plus.addEventListener( "animationend", e => {
     if( hasDropped ){
         plus.style.height = plus_max;
+        plus_link.style.display = "flex";
     } else {
         plus.style.height = plus_min;
     }
@@ -57,6 +67,14 @@ minus.addEventListener( "animationend", e => {
         minus.style.height = minus_max;
     } else {
         minus.style.height = minus_min;
+    }
+});
+////////////////////////////////////////////////////////////////
+minus_link.addEventListener( "animationend", e => {
+    if( hasDropped ){
+        minus_link.style.opacity = "1";
+    } else {
+        minus_link.style.opacity = "0";
     }
 });
 ////////////////////////////////////////////////////////////////
