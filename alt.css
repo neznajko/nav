@@ -43,11 +43,6 @@ a {
     background: var( --alt-brand-con-bgr );
 }
 /***************************************************************/
-.center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 /***************************************************************/
 .alt-brand-con > svg {
     background: var( --alt-brand-svg-bgr );

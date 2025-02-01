@@ -1,56 +1,82 @@
 ////////////////////////////////////////////////////////////////
 console.log( "dropdown .." );
 ////////////////////////////////////////////////////////////////
+const link = query( ".dropdown-link" );
+const icon = query( ".dropdown-anime i" );
+const minus = query( ".minus" );
+const plus = query( ".plus" );
+const minus_link = query( ".dropdown-menu-item.minus" );
+const plus_link = query( ".dropdown-menu-item.plus" );
 ////////////////////////////////////////////////////////////////
-const anime = document.querySelector( '.dropdown_anime' );
-const link = document.querySelector( '.dropdown_link' );
-const icon = anime.querySelector( 'i' );
-const menu = document.querySelector( '.dropdown_menu' );
-const plus = document.querySelector( '.dropdown_plus' );
-const boom = menu.querySelector( 'span' );
-const spam = plus.querySelector( 'span' );
+const minus_min = getProp( ROOT, "--minus-min" );
+const minus_max = getProp( ROOT, "--minus-max" );
+const plus_min = getProp( ROOT, "--plus-min" );
+const plus_max = getProp( ROOT, "--plus-max" );
 ////////////////////////////////////////////////////////////////
-// replace here key with state
-let key = false;
+let hasDropped = false;
 ////////////////////////////////////////////////////////////////
-// assing this to .dropdown_anime
-link.addEventListener( 'click', e => {
-    if( key ){
-        icon.classList.add( 'ccw' );
-        icon.classList.remove( 'cw' ); 
-        menu.classList.add( 'close-menu' );
-        menu.classList.remove( 'open-menu' );
-        plus.classList.add( 'close-menu' );
-        plus.classList.remove( 'open-menu' );
+link.addEventListener( "click", e => {
+    if( hasDropped ){
+        icon.classList.remove(  "clockwise" );
+        icon.classList.add( "anticlockwise" );
+        
+        minus.classList.remove( "minus_min_to_max" );
+        minus.classList.add(    "minus_max_to_min" );
+
+        plus.classList.remove( "plus_min_to_max" );
+        plus.classList.add(    "plus_max_to_min" );
+        plus_link.style.display = "none";
+
+        minus_link.classList.remove( "minus_down" );
+        minus_link.classList.add( "minus_up" );
     } else {
-        icon.classList.add( 'cw' );
-        icon.classList.remove( 'ccw' ); 
-        menu.classList.add( 'open-menu' );
-        menu.classList.remove( 'close-menu' );
-        plus.classList.add( 'open-menu' );
-        plus.classList.remove( 'close-menu' );
+        icon.classList.remove( "anticlockwise" );
+        icon.classList.add(        "clockwise" );
+        
+        minus.classList.remove( "minus_max_to_min" );
+        minus.classList.add(    "minus_min_to_max" );
+
+        plus.classList.remove( "plus_max_to_min" );
+        plus.classList.add(    "plus_min_to_max" );
+
+        minus_link.classList.remove( "minus_up" );
+        minus_link.classList.add( "minus_down" );
     }
 });
 ////////////////////////////////////////////////////////////////
-icon.addEventListener( 'animationend', e => {
-    if( key ){
+icon.addEventListener( "animationend", e => {
+    if( hasDropped ){
         icon.style.transform = "rotate( 0deg )";
-        menu.style.height = 0;
-        plus.style.height = 0;
     } else {
         icon.style.transform = "rotate( 90deg )";
-        menu.style.height = "50px";
-        plus.style.height = "50px";
-        boom.style.display = "block";
-        spam.style.display = "block";
     }
-    key = !key;
-});
-icon.addEventListener( 'animationstart', e => {
-    boom.style.display = "none";
-    spam.style.display = "none";
+    hasDropped = !hasDropped;
 });
 ////////////////////////////////////////////////////////////////
+plus.addEventListener( "animationend", e => {
+    if( hasDropped ){
+        plus.style.height = plus_max;
+        plus_link.style.display = "flex";
+    } else {
+        plus.style.height = plus_min;
+    }
+});
+////////////////////////////////////////////////////////////////
+minus.addEventListener( "animationend", e => {
+    if( hasDropped ){
+        minus.style.height = minus_max;
+    } else {
+        minus.style.height = minus_min;
+    }
+});
+////////////////////////////////////////////////////////////////
+minus_link.addEventListener( "animationend", e => {
+    if( hasDropped ){
+        minus_link.style.opacity = "1";
+    } else {
+        minus_link.style.opacity = "0";
+    }
+});
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
