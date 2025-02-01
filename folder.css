@@ -29,6 +29,7 @@ nav > p {
     top: 5.2rem;
     z-index: 1000;
     color: red;
+    font-size: 2rem;
 }
 .folder a.folder-brand {
     background: var( --folder-brand-bgr-1 );
