@@ -1,0 +1,211 @@
+/***************************************************************/
+:root {
+    --alt-nav-height: 10rem;
+    --alt-body-bgr: hsl( 300, 40%, 20% );
+    --alt-srch-con-width: 11.5rem;
+    --alt-brand-con-bgr: hsl( 20, 20%, 80% );
+    --alt-brand-svg-bgr: hsl( 350, 50%, 20% );
+    --alt-srch-con-bgr: hsl( 300, 18%, 60% );
+    --alt-duration: 10s;
+    --alt-laser-from: 0;
+    --alt-laser-to:   100%;
+    --alt-drop-clr-1: hsl( 20, 20%, 70% );
+    --alt-drop-clr-2: hsla( 20, 50%, 10%, 1.0 );
+}
+/***************************************************************/
+a {
+    color: inherit;
+}
+/***************************************************************/
+/***************************************************************/
+/***************************************************************/
+/***************************************************************/
+.alt-con {
+    display: flex;
+    flex-direction: column;
+}
+/***************************************************************/
+.alt-nav {
+    height: var( --alt-nav-height );
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: var( --alt-nav-height )
+                           auto
+                           var( --alt-srch-con-width );
+}
+/***************************************************************/
+.alt-body {
+    height: calc( 0.4 * var( --alt-nav-height ));
+    background: var( --alt-body-bgr );
+}
+/***************************************************************/
+.alt-brand-con {
+    background: var( --alt-brand-con-bgr );
+}
+/***************************************************************/
+/***************************************************************/
+.alt-brand-con > svg {
+    background: var( --alt-brand-svg-bgr );
+}
+/***************************************************************/
+/* ###### [ l i n k s ] ###################################### */
+.alt-links-con {
+    display: grid;
+    grid-template-columns: repeat( 16, 1fr );
+    grid-template-rows: repeat( 8, 1fr );
+    position: relative;
+}
+/* ########################################################### */
+/***************************************************************/
+.alt-background {
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+    background: hsl(10,50%,20%);
+}
+/* ########################################################### */
+/***************************************************************/
+.alt-link-hook {
+    grid-row: 4;
+    grid-column: 2;
+    position: relative;
+}
+.alt-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: hsl(320,20%,40%);
+    background: hsl(220,50%,10%);
+    font-family: "Michroma", serif;
+    font-size: 1.1rem;
+    padding: 0.2rem 0.8rem 0.2rem 0.8rem;
+    border: 1px solid hsl(300,18%,80%,.6);
+    border-radius: 0.5rem;
+    transform: skew( -20deg );
+    z-index: 2;
+}
+/***************************************************************/
+.alt-link.lasers {
+    margin-top: 1.2rem;
+    grid-column: 4;
+    color: hsl( 0, 80%, 20% );
+    background: hsl( 25, 50%, 55% );
+    border-color: hsl( 300, 29%, 40% );
+    border-width: 5px;
+}
+/***************************************************************/
+.alt-link.the {
+    grid-column: 6;
+    border-color: hsl( 210, 100%, 80% );
+    background: hsl( 200, 50%, 20% );
+    color: hsl( 200, 89%, 60% );
+    margin-bottom: 1.5rem;
+}
+/***************************************************************
+ * L A S E R
+ **************************************************************/
+.alt-laser {
+    height: 100%;
+    width: 2px;
+    background: hsl( 0, 0%, 100%);
+    position: absolute;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    left: 0;
+    z-index: 1;
+}
+.alt-scan { /* a n i m a t i o n */
+    animation-name: altscan;
+    animation-duration: var( --alt-duration );
+    animation-delay: 0.3s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+@keyframes altscan {
+    from { left: var( --alt-laser-from ); }
+    to {   left: var( --alt-laser-to ); }
+}
+/***************************************************************/
+.alt-point {
+    grid-column: 7;
+    grid-row-start: 7;
+    grid-row-end: 9;
+    background: var( --alt-body-bgr );
+}
+/***************************************************************/
+.alt-drop {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    width: 8rem;
+    display: grid;
+    grid-template-columns: repeat( 5, 1fr );
+    grid-template-rows: repeat( 3, 1fr );
+}
+/***************************************************************/
+.alt-drop-1 {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column: 2;
+    //background: var( --alt-drop-clr-2 );
+    background: hsl( 210, 100%, 60% );
+    margin-bottom: -7rem;
+}
+/***************************************************************/
+.alt-srch-con {
+    background: var( --alt-srch-con-bgr );
+}
+/***************************************************************/
+.alt-srch-input {
+    height: calc( .29 * var( --alt-nav-height ));
+    width: calc( .7 * var( --alt-srch-con-width ));
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    background: black;
+    color: red;
+    border-radius: 10rem 10rem 10rem 4rem;
+}
+/***************************************************************/
+.alt-srch-button {
+    position: absolute;
+    font-size: 1.4rem;
+    font-weight: 1000;
+    color: var( --alt-brand-con-bgr );
+    right: 1rem;
+    opacity: .65;
+}
+/***************************************************************/
+/***************************************************************/
+@media( max-width: 600px ){
+    .alt-nav {
+        grid-template-columns: 100%;
+        grid-template-rows: 200px 300px 100px;
+        height: auto;
+    }
+    .alt-link {
+        grid-column: 4;
+        grid-row: 2;
+    }
+    .alt-link.lasers {
+        grid-column: 3;
+        grid-row: 4;
+    }
+    .alt-link.the {
+        grid-column: 4;
+        grid-row: 6;
+    }
+    .alt-laser {
+        display: none;
+    }
+    .alt-point {
+        grid-column-start: 6;
+        grid-column-end: 9;
+        grid-row: 8;
+        background: var( --alt-srch-con-bgr );
+    }
+    .alt-drop {
+        grid-column: 3
+    }
+}
+/***************************************************************/
+/***************************************************************/
