@@ -11,6 +11,8 @@
     --alt-laser-to:   100%;
     --alt-drop-clr-1: hsl( 20, 20%, 70% );
     --alt-drop-clr-2: hsla( 20, 50%, 10%, 1.0 );
+    --indicator-duration: 1s;
+    --aura-duration: 1s;
 }
 /***************************************************************/
 a {
@@ -87,41 +89,72 @@ a {
     z-index: 2;
     position: relative;
 }
+/* =============================================================
+ * ##########################################################
+ * ##[ Indicator Container ]#################################
+ * ########################################################## */
+.alt-indicator-con {
+    position: absolute; /* alt-link */
+    bottom: -0.7rem;
+    right: 0.4rem;
+}
 .alt-indicator {
-    position: absolute;
-    bottom: -0.6rem;
-    right: 0.29rem;
+    position: absolute; /* alt-indicator-con */
     width: 4px;
     height: 4px;
     border-radius: 50%;
     transform: skew( 20deg );
+    z-index: 2;
+    background: hsl(12,90%,8%);
 }
-.alt-indicator.activate {
+.alt-indicator.aura {
     opacity: 0;
-    background: red;
-}
-.alt-indicator.lasers {
-    opacity: 0;
-    background: red;
-}
-.alt-indicator.the {
-    opacity: 0;
-    background: red;
+    width: 16px;
+    height: 16px;
+    background: hsl(0,100%,20%);
+    z-index: 1;
 }
 /***************************************************************/
 /* ####[ Indicator Animation ]################################ */
 @keyframes forward_indicator_animation { /******* forward ******/
     0% {
+        background: hsl(12,90%,8%);
+    }
+    100% {
+        background: red;
+    }
+}
+.forward_indicator_animation {
+    animation: forward_indicator_animation
+               var(--indicator-duration ) 1;
+}
+@keyframes backward_indicator_animation { /***** backward ******/
+    0% {
+        background: red;
+    }
+    100% {
+        background: hsl(12,90%,8%);
+    }
+}
+.backward_indicator_animation {
+    animation: backward_indicator_animation
+               var( --indicator-duration ) 1;
+}
+/***************************************************************/
+/* ####[ Aura Animation ]################################ */
+@keyframes forward_aura_animation { /******* forward ******/
+    0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
     }
 }
-.forward_indicator_animation {
-    animation: forward_indicator_animation 2s 1;
+.forward_aura_animation {
+    animation: forward_aura_animation
+               var(--aura-duration ) 1;
 }
-@keyframes backward_indicator_animation { /***** backward ******/
+@keyframes backward_aura_animation { /***** backward ******/
     0% {
         opacity: 1;
     }
@@ -129,10 +162,10 @@ a {
         opacity: 0;
     }
 }
-.backward_indicator_animation {
-    animation: backward_indicator_animation 2s 1;
+.backward_aura_animation {
+    animation: backward_aura_animation
+               var( --aura-duration ) 1;
 }
-/***************************************************************/
 /***************************************************************/
 /***************************************************************/
 .alt-link.lasers {

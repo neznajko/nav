@@ -1,8 +1,9 @@
 ////////////////////////////////////////////////////////////////
 console.log( " a l t " );
 ////////////////////////////////////////////////////////////////
-const indicators = queryall( ".alt-indicator" );
-const links = queryall( ".alt-indicator + a" );
+const indicators = queryall( ".alt-indicator:not(.aura)" );
+const auras = queryall( ".alt-indicator.aura" );
+const links = queryall( ".alt-indicator-con + a" );
 ////////////////////////////////////////////////////////////////
 const n = links.length;
 ////////////////////////////////////////////////////////////////
@@ -22,22 +23,29 @@ function removeClass( domElement, className ){
 for( let j = 0; j < n; ++j ){
     const link = links[ j ];
     const indicator = indicators[ j ];
+    const aura = auras[ j ];
     // add click event listeners to links
     link.addEventListener( "click", e => {
         if( animation_direction[ j ] == FORWARD ){
             removeClass( indicator, "backward_indicator_animation" );
             addClass(    indicator,  "forward_indicator_animation" );
+            removeClass( aura, "backward_aura_animation" );
+            addClass(    aura,  "forward_aura_animation" );
         } else {
             removeClass( indicator,  "forward_indicator_animation" );
             addClass(    indicator, "backward_indicator_animation" );
+            removeClass( aura,  "forward_aura_animation" );
+            addClass(    aura, "backward_aura_animation" );
         }        
     });
     // add animationend event listeners to indicators
     indicator.addEventListener( "animationend", e => {
         if( animation_direction[ j ] == FORWARD ){
-            indicator.style.opacity = "1";
+            indicator.style.background = "red";
+            aura.style.opacity = "1";
         } else {
-            indicator.style.opacity = "0";
+            indicator.style.background = "hsl(12,90%,8%)";
+            aura.style.opacity = "0";
         }
         animation_direction[ j ] = !animation_direction[ j ];
     });
