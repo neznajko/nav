@@ -4,6 +4,7 @@ console.log( " a l t " );
 const indicators = queryall( ".alt-indicator:not(.aura)" );
 const auras = queryall( ".alt-indicator.aura" );
 const links = queryall( ".alt-indicator-con + a" );
+const laser = query( ".alt-laser" );
 ////////////////////////////////////////////////////////////////
 const n = links.length;
 ////////////////////////////////////////////////////////////////
@@ -20,6 +21,23 @@ function removeClass( domElement, className ){
     domElement.classList.remove( className );
 }
 ////////////////////////////////////////////////////////////////
+let altcounter = 0;
+function altinc() {
+    ++altcounter;
+    if( altcounter == 3 ){
+        addClass( laser, "altscan" );
+    }
+}
+function altdec() {
+    --altcounter;
+    if( altcounter == 0 ){
+        removeClass( laser, "altscan" );
+    }
+}
+laser.addEventListener( "animationend", e => {
+    laser.style.left = "100%";
+});
+////////////////////////////////////////////////////////////////
 for( let j = 0; j < n; ++j ){
     const link = links[ j ];
     const indicator = indicators[ j ];
@@ -31,11 +49,13 @@ for( let j = 0; j < n; ++j ){
             addClass(    indicator,  "forward_indicator_animation" );
             removeClass( aura, "backward_aura_animation" );
             addClass(    aura,  "forward_aura_animation" );
+            altinc();
         } else {
             removeClass( indicator,  "forward_indicator_animation" );
             addClass(    indicator, "backward_indicator_animation" );
             removeClass( aura,  "forward_aura_animation" );
             addClass(    aura, "backward_aura_animation" );
+            altdec();
         }        
     });
     // add animationend event listeners to indicators
