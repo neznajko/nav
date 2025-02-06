@@ -7,10 +7,12 @@
     --alt-brand-svg-bgr: hsl( 350, 50%, 20% );
     --alt-srch-con-bgr: hsl( 300, 18%, 60% );
     --alt-duration: 10s;
-    --alt-laser-from: 0;
-    --alt-laser-to:   100%;
-    --alt-drop-clr-1: hsl( 20, 20%, 70% );
-    --alt-drop-clr-2: hsla( 20, 50%, 10%, 1.0 );
+    --alt-laser-from: 100%;
+    --alt-laser-to:   0%;
+    --indicator-duration: 1s;
+    --aura-duration: 1s;
+    --aura-color: hsl(0,100%,40%);
+    --aura-opacity: 0.29;
 }
 /***************************************************************/
 a {
@@ -21,8 +23,6 @@ a {
 /***************************************************************/
 /***************************************************************/
 .alt-con {
-    display: flex;
-    flex-direction: column;
 }
 /***************************************************************/
 .alt-nav {
@@ -34,10 +34,6 @@ a {
                            var( --alt-srch-con-width );
 }
 /***************************************************************/
-.alt-body {
-    height: calc( 0.4 * var( --alt-nav-height ));
-    background: var( --alt-body-bgr );
-}
 /***************************************************************/
 .alt-brand-con {
     background: var( --alt-brand-con-bgr );
@@ -48,96 +44,152 @@ a {
     background: var( --alt-brand-svg-bgr );
 }
 /***************************************************************/
+/* ###### [ l i n k s ] ###################################### */
 .alt-links-con {
-    background: center no-repeat url( "pix/alt-background.svg" );
-    background-size: cover;
     display: grid;
-    grid-template-columns: repeat( 8, 1fr );
+    grid-template-columns: repeat( 16, 1fr );
     grid-template-rows: repeat( 8, 1fr );
     position: relative;
 }
+/* ########################################################### */
 /***************************************************************/
-.alt-link {
+.alt-background {
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+    background: hsl(10,50%,20%);
+}
+/* ########################################################### */
+/***************************************************************/
+.alt-link-hook {
     grid-row: 4;
     grid-column: 2;
-    background: hsl( 20, 20%, 60% );
-    font-size: 1.4rem;
-    width: 8rem;
-    height: 2.5rem;
-    border: 2px solid hsl( 300, 18% ,80% );
-    border-radius: 10rem;
-    margin-top: 1.5rem;
-    color: var( --alt-body-bgr );
+    position: relative;
+}
+.alt-link-stack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+.alt-link {
+    color: hsl(10,50%,20%);
+    background: hsl(12,90%,8%);
+    font-family: "Michroma", serif;
+    font-size: 1.1rem;
+    padding: 0.2rem 0.8rem 0.2rem 0.8rem;
+    margin-right: 0.5rem;
+    border-radius: 0.4rem;
+    transform: skew( -20deg );
     z-index: 2;
+    position: relative;
+}
+/* =============================================================
+ * ##########################################################
+ * ##[ Indicator Container ]#################################
+ * ########################################################## */
+.alt-indicator-con {
+    position: absolute; /* alt-link */
+    bottom: -0.7rem;
+    right: 0rem;
+}
+.alt-indicator {
+    position: absolute; /* alt-indicator-con */
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    transform: skew( 20deg );
+    z-index: 2;
+    background: hsl(12,90%,8%);
+}
+.alt-indicator.aura {
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    background: var( --aura-color );
+    z-index: 1;
 }
 /***************************************************************/
-.alt-link.lasers {
-    margin-top: 1.2rem;
-    grid-column: 4;
-    color: hsl( 0, 80%, 20% );
-    background: hsl( 25, 50%, 55% );
-    border-color: hsl( 300, 29%, 40% );
-    border-width: 5px;
+/* ####[ Indicator Animation ]################################ */
+@keyframes forward_indicator_animation { /******* forward ******/
+    0% {
+        background: hsl(12,90%,8%);
+    }
+    100% {
+        background: var( --red );
+    }
+}
+.forward_indicator_animation {
+    animation: forward_indicator_animation
+               var(--indicator-duration ) 1;
+}
+@keyframes backward_indicator_animation { /***** backward ******/
+    0% {
+        background: var( --red );
+    }
+    100% {
+        background: hsl(12,90%,8%);
+    }
+}
+.backward_indicator_animation {
+    animation: backward_indicator_animation
+               var( --indicator-duration ) 1;
 }
 /***************************************************************/
-.alt-link.the {
-    grid-column: 6;
-    border-color: hsl( 210, 100%, 80% );
-    background: hsl( 200, 50%, 20% );
-    color: hsl( 200, 89%, 60% );
-    margin-bottom: 1.5rem;
+/* ####[ Aura Animation ]################################ */
+@keyframes forward_aura_animation { /******* forward ******/
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: var( --aura-opacity );
+    }
+}
+.forward_aura_animation {
+    animation: forward_aura_animation
+               var(--aura-duration ) 1;
+}
+@keyframes backward_aura_animation { /***** backward ******/
+    0% {
+        opacity: var( --aura-opacity );
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.backward_aura_animation {
+    animation: backward_aura_animation
+               var( --aura-duration ) 1;
 }
 /***************************************************************
+################################################################
+ ***************************************************************
  * L A S E R
  **************************************************************/
 .alt-laser {
     height: 100%;
-    width: 2px;
-    background: hsl( 0, 0%, 100%);
+    width: 4px;
+    background: var( --red );
     position: absolute;
-    grid-row-start: 4;
-    grid-row-end: 5;
-    left: 0;
+    top: 0%;
+    left: 100%;
     z-index: 1;
+    margin-left: -4px;
 }
-.alt-scan { /* a n i m a t i o n */
+.altscan { /* a n i m a t i o n */
     animation-name: altscan;
     animation-duration: var( --alt-duration );
     animation-delay: 0.3s;
     animation-iteration-count: 1;
-    animation-timing-function: linear;
+    animation-timing-function: ease-out;
 }
 @keyframes altscan {
-    from { left: var( --alt-laser-from ); }
-    to {   left: var( --alt-laser-to ); }
+    0% {   left: var( --alt-laser-from ); }
+    50% {    left: var( --alt-laser-to ); }
+    100% { left: var( --alt-laser-from ); }
 }
 /***************************************************************/
-.alt-point {
-    grid-column: 7;
-    grid-row-start: 7;
-    grid-row-end: 9;
-    background: var( --alt-body-bgr );
-}
 /***************************************************************/
-.alt-drop {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 4;
-    width: 8rem;
-    display: grid;
-    grid-template-columns: repeat( 5, 1fr );
-    grid-template-rows: repeat( 3, 1fr );
-}
 /***************************************************************/
-.alt-drop-1 {
-    grid-row-start: 1;
-    grid-row-end: 4;
-    grid-column: 2;
-    //background: var( --alt-drop-clr-2 );
-    background: hsl( 210, 100%, 60% );
-    margin-bottom: -7rem;
-}
 /***************************************************************/
 .alt-srch-con {
     background: var( --alt-srch-con-bgr );
@@ -148,8 +200,8 @@ a {
     width: calc( .7 * var( --alt-srch-con-width ));
     font-size: 1.2rem;
     padding-left: 1rem;
-    background: black;
-    color: red;
+    background: var( --black );
+    color: var( --red );
     border-radius: 10rem 10rem 10rem 4rem;
 }
 /***************************************************************/
@@ -168,30 +220,6 @@ a {
         grid-template-columns: 100%;
         grid-template-rows: 200px 300px 100px;
         height: auto;
-    }
-    .alt-link {
-        grid-column: 4;
-        grid-row: 2;
-    }
-    .alt-link.lasers {
-        grid-column: 3;
-        grid-row: 4;
-    }
-    .alt-link.the {
-        grid-column: 4;
-        grid-row: 6;
-    }
-    .alt-laser {
-        display: none;
-    }
-    .alt-point {
-        grid-column-start: 6;
-        grid-column-end: 9;
-        grid-row: 8;
-        background: var( --alt-srch-con-bgr );
-    }
-    .alt-drop {
-        grid-column: 3
     }
 }
 /***************************************************************/

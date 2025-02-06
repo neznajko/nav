@@ -7,6 +7,10 @@ function query( name ){
     return document.querySelector( name );
 }
 ////////////////////////////////////////////////////////////////
+function queryall( name ){
+    return document.querySelectorAll( name );
+}
+////////////////////////////////////////////////////////////////
 function getProp( domObject, propName ){
     return( window.getComputedStyle( domObject )
                   .getPropertyValue( propName )
