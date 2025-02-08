@@ -6,6 +6,9 @@
   <meta name="viewport" 
         content="width=device-width,initial-scale=1.0">
   <title> dub lab </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="#">
   <link rel="stylesheet" 
         href="lib/bootstrap/bootstrap.css">
@@ -23,12 +26,33 @@ bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
            width="100%" height="100%"
            xmlns="http://www.w3.org/2000/svg">
         <style>
-          .Rrrrr {
-              font: italic 10rem serif;
-              fill: hsl(250,40%,40%);
+          .char {
+              font-family: "Abril Fatface", serif;
+              font-size: 20rem;
+              stroke: hsl(250,10%,50%);
+              stroke-width: 2;
+              fill: none;
+          }
+          .dub {
+              font-family: "Abril Fatface", serif;
+              font-size: 9rem;
+              stroke: hsl(240,50%,15%);
+              stroke-width: 10;
+              paint-order: stroke;
+              fill: hsl(250,10%,50%);
           }
         </style>
-        <text x="65" y="155" class="Rrrrr">Grumpy!</text>
+        <text x="-42" y="250" class="char"> d </text>
+        <text x="72" y="178" class="char"> u </text>
+        <text x="160" y="194" class="char"> b </text>
+        <text x="28" y="150" class="dub"> dub </text>
+        <defs>
+          <rect id="pixel" width="4" height="4" fill="hsl(250,10%,60%)"/>
+        </defs>
+        <use href="#pixel" x="15" y="20"/>
+        <use href="#pixel" x="85" y="160"/>
+        <use href="#pixel" x="160" y="65"/>
+        <use href="#pixel" x="286" y="132"/>
       </svg>
     </div> <!-------[ brand-con ]------------------------------>
   </div> <!--------------[ con ]------------------------------->
