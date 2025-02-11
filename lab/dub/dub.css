@@ -1,4 +1,6 @@
-/* ********************************************************** */
+/* **********************************************************
+   *********[ root ]*****************************************
+   ********************************************************** */
 a {
     color:                                            inherit;
 }
@@ -7,7 +9,7 @@ a {
    ########################################################## */
 .dub-con {
     height:                                             10rem;
-    background:                              hsl(249,75%,40%);
+    background:                          var( --dub-con-bgr );
     display:                                             grid;
     grid-template-columns:                     repeat(20,1fr);
     grid-template-rows:                         repeat(5,1fr);
@@ -18,26 +20,26 @@ a {
 .dub-brand-con {
     grid-row:                                             1/4;
     grid-column:                                          1/4;
-    background:                              hsl(240,50%,15%);
+    background:                    var( --dub-brand-con-bgr );
 }
 /* %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
    %%%%%%%%%%%%%%%%%%%[ links-con ]%%%%%%%%%%%%%%%%%%%%%%%%%%
    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% */
 .dub-links-con {
-    background:                           hsl(250,10%,40%,.6);
+    background:                    var( --dub-links-con-bgr );
     grid-row:                                             1/4;
     grid-column:                                         4/10;
     display:                                             grid;
-    grid-template-columns:       repeat(3, 0.6rem 1fr) 0.6rem;
-    grid-template-rows:                     1.4rem 1fr 1.4rem;
+    grid-template-columns:       repeat(3, 0.8rem 1fr) 0.8rem;
+    grid-template-rows:                       20% 30% 30% 20%;
 }
 /* ``````````````````````````````````````````````````````````
    ````````````[ deck ]``````````````````````````````````````
    `````````````````````````````````````````````````````````` */
 .dub-deck {
-    grid-row:                                               2;
+    grid-row:                                             2/4;
     grid-column:                                            2;
-    background:                                          blue;
+    background:                         var( --dub-deck-bgr );
 }
 /* **********************************************************   
    **********************************************************   
@@ -58,9 +60,13 @@ a {
         grid-row:                                         5/9;
         grid-column:                                     1/-1;
         grid-template-columns:                 0.6rem 1fr 40%;
-        grid-template-rows:      repeat(3, 0.6rem 1fr) 0.6rem;
+        grid-template-rows:              repeat(3, 4% 28%) 4%;
+    }
+    .dub-deck {
+        grid-row:                                           2;
+        grid-column:                                        2;
     }
 }
 /* **********************************************************
-   log:
+   log: 4x + 3y = 4*4 + 3*28
    ********************************************************** */
