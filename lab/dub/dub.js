@@ -1,6 +1,18 @@
 ////////////////////////////////////////////////////////////////
 console.log( "dubing .." );
 ////////////////////////////////////////////////////////////////
+function updateViewBox() {
+    const svg = document.getElementById( "dub-brand" );
+    if( window.innerWidth < 600) {
+        svg.setAttribute( "viewBox", "0 0 300 260" );
+    } else {
+        svg.setAttribute( "viewBox", "0 0 400 200" );
+    }
+}
+////////////////////////////////////////////////////////////////
+window.addEventListener( "resize", updateViewBox );
+updateViewBox();
+////////////////////////////////////////////////////////////////
 class Dom {
     constructor( selector ){
         this.elem = document.querySelector( selector );
@@ -24,19 +36,30 @@ class Link extends Dom {
         super( ".dub-" + name );
         this.light = new Light( "#" + name + "-light" );
         this.light.hide();
-        this.subscribe();
+        this.toggle = false;
+        this.BGR = getProp( ROOT, "--dub-links-bgr" );
     }
     subscribe() {
+        this.elem.addEventListener( "click", e => {
+            if( this.toggle ){
+                this.light.hide();
+            } else {
+                this.light.show();
+            }
+            this.toggle = !this.toggle;
+        });
         this.elem.addEventListener( "mouseenter", e => {
-            this.light.show();
+            this.elem.style.background = this.BGR;
         });
         this.elem.addEventListener( "mouseleave", e => {
-            this.light.hide();
+            this.elem.style.background = "none";
         });
     }
 }
 ////////////////////////////////////////////////////////////////
-const deckLink = new Link( "deck" );
+new Link( "deck" ).subscribe();
+new Link( "config" ).subscribe();
+new Link( "app" ).subscribe();
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////
