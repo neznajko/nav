@@ -37,7 +37,6 @@ class Link extends Dom {
         this.light = new Light( "#" + name + "-light" );
         this.light.hide();
         this.toggle = false;
-        this.BGR = getProp( ROOT, "--dub-links-bgr" );
     }
     subscribe() {
         this.elem.addEventListener( "click", e => {
@@ -49,10 +48,8 @@ class Link extends Dom {
             this.toggle = !this.toggle;
         });
         this.elem.addEventListener( "mouseenter", e => {
-            this.elem.style.background = this.BGR;
         });
         this.elem.addEventListener( "mouseleave", e => {
-            this.elem.style.background = "none";
         });
     }
 }
