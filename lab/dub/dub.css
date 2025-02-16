@@ -100,38 +100,46 @@ a {
     justify-content:                            space-between;
 }
 .dub-menu {
-    width: 4rem;
-    height: 4rem;
-    background: hsl(325,50%,40%,0.2);
-    border-radius: 50%;
-    position: relative;
+    width:                                               4rem;
+    height:                                              4rem;
+    background:                                          none;
+    color:                              var( --dub-menu-fgr );
+    border-radius:                                        50%;
+    position:                                        relative;
+}
+.dub-menu:hover {
+    background:                         var( --dub-menu-bgr );
 }
 .dub-menu a {
-    font-size: 1.8rem;
+    font-size:                                         1.8rem;
 }
 .dub-menu-list {
-    position: absolute;
-    width: 15rem;
-    background: hsl( 35, 40%, 20%, 0.5 );
-    top: 3.4rem;
-    display: flex;
-    flex-direction: column;
+    position:                                        absolute;
+    width:                                              15rem;
+    background:                    var( --dub-menu-list-bgr );
+    top:                                               3.4rem;
+    display:                                             none;
+    flex-direction:                                    column;
+    padding:                                           0.2rem;
 }
 .dub-menu-list.left {
-    left: 0;
+    left:                                                   0;
 }
 .dub-menu-list.ryte {
-    right: 0.8rem;
+    right:                                             0.8rem;
 }
 .dub-menu-item {
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    padding-left: 0.5rem;
+    font-size:                                         1.2rem;
+    display:                                             flex;
+    align-items:                                       center;
+    padding-left:                                      0.4rem;
 }
 .dub-menu-item a {
-    font-size: 0.8rem;
-    margin-left: 0.7rem;
+    font-size:                                         0.8rem;
+    margin-left:                                       0.5rem;
+}
+.dub-menu-item:hover {
+    background:                          hsl(350,40%,20%,0.5);
 }
 /* ##########################################################
    **********************************************************   
@@ -186,5 +194,13 @@ a {
     }
 }
 /* **********************************************************
-   log: 4x + 3y = 4*4 + 3*28
+   <> 2.1.14: Bodies of mass m1 and m2 are connected by a spring
+   with a spring constant k. A constant force F acts on the body of mass m2,
+   directed along the spring to the body of mass m1. Find how much
+   the spring is compressed if there are no other external forces
+   and the oscillations have already stopped. What will be the
+   acceleration of the bodies immediately after the force F ceases
+   to act?
+          k
+   m1 -mnmnmnm- m2 <--- F
    ********************************************************** */

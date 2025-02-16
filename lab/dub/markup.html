@@ -35,11 +35,14 @@ bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         --dub-links-color:                     hsl(210,90%,45%);
         --dub-links-bgr:                   hsl(220,80%,50%,0.4);
         --dub-deck-bgr:                         hsl(40,50%,10%);
-        --dub-grad-20:  hsl(240,50%,15%);
-        --dub-grad-40:  hsl(235,60%,20%);
-        --dub-grad-60:  hsl(230,65%,30%);
-        --dub-grad-80:  hsl(225,75%,40%);
-        --dub-grad-100: hsl(220,80%,50%);
+        --dub-grad-20:                         hsl(240,50%,15%);
+        --dub-grad-40:                         hsl(235,60%,20%);
+        --dub-grad-60:                         hsl(230,65%,30%);
+        --dub-grad-80:                         hsl(225,75%,40%);
+        --dub-grad-100:                        hsl(220,80%,50%);
+        --dub-menu-bgr:                   hsl(240,100%,52%,0.5);
+        --dub-menu-fgr:                        hsl(260,20%,80%);
+        --dub-menu-list-bgr:                hsl(35,40%,20%,0.6);
     }
   </style>
 </head>
@@ -156,13 +159,13 @@ bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
       </a> <!-----------[ /dub-app ]--------------------------->
     </div> <!--------/ links-con /----------------------------->
     <div class="dub-gradient"> </div> <!----( /gradient )------>
-    <div class="dub-menu-con">
+    <div class="dub-menu-con"> <!--( menu-con )---------------->
       
-      <div class="dub-menu center">
+      <div class="dub-menu center"> <!------[ CPU ]------------>
         <a href="#">
           <i class="bi bi-cpu"></i>
         </a>
-        <div class="dub-menu-list ryte">
+        <div class="dub-menu-list left">
           <div class="dub-menu-item">
             <i class="bi bi-distribute-horizontal"></i>
             <a href="#"> Network Infrastructure Sync </a>
@@ -180,58 +183,61 @@ bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
             <a href="#"> Full System Override </a>
           </div>
         </div>
-
-      </div>
-
-      <div class="dub-menu center">
+      </div>  <!----------------[ /CPU ]----------------------->
+      <div class="dub-menu center"> <!--------[ chevron ]------>
         <a href="#">
           <i class="bi bi-chevron-down"></i>
         </a>
-      </div>
-      <div class="dub-menu center">
+        <div class="dub-menu-list left">
+          <div class="dub-menu-item">
+            <i class="bi bi-reply-all"></i>
+            <a href="#"> Tactical Positioning </a>
+          </div>
+          <div class="dub-menu-item">
+            <i class="bi bi-rocket"></i>
+            <a href="#"> Mission Launch </a>
+          </div>
+          <div class="dub-menu-item">
+            <i class="bi bi-x-diamond-fill"></i>
+            <a href="#"> Classified Objective </a>
+          </div>
+        </div>
+      </div> <!----------------[ /chevron ]-------------------->
+      <div class="dub-menu center"> <!--[ instagram ]---------->
         <a href="#">
           <i class="bi bi-instagram"></i>
         </a>
-      </div>
-      <div class="dub-menu center">
+        <div class="dub-menu-list ryte">
+          <div class="dub-menu-item">
+            <i class="bi bi-hdd"></i>
+            <a href="#"> Classified Information Vault </a>
+          </div>
+          <div class="dub-menu-item">
+            <i class="bi bi-hearts"></i>
+            <a href="#"> High-Priority Target Profiles </a>
+          </div>
+        </div>
+      </div> <!-----------------[ /instagram ]----------------->
+      <div class="dub-menu center"> <!------[ chat ]----------->
         <a href="#">
           <i class="bi bi-chat-left"></i>
         </a>
-      </div>
-    </div>
-    <!--------[ M e n u s ]------------------------------------
-      <i class="bi bi-chat-left"></i>
-        - <i class="bi bi-cloud-fog2"> </i>
-            Secure Backup and Storage
-        - <i class="bi bi-columns-gap"></i>
-            Status Overview / Control Dashboard
-        - <i class="bi bi-hammer"></i>
-            System Configuration & Maintenance
-
-      <i class="bi bi-instagram"></i>
-        - <i class="bi bi-hdd"></i>
-           Classified Information Vault
-        - <i class="bi bi-hearts"></i>
-           High-Priority Target Profiles
-
-      <i class="bi bi-chevron-down"></i>
-        - <i class="bi bi-reply-all"></i>
-          Tactical Positioning
-        - <i class="bi bi-rocket"></i>
-          Mission Launch
-        - <i class="bi bi-x-diamond-fill"></i>
-          Classified Objective & Coordinated Extraction
-
-      <i class="bi bi-cpu"></i>
-        - <i class="bi bi-distribute-horizontal"></i>
-          Network Infrastructure Sync
-        - <i class="bi bi-dice-6-fill"></i>
-          Risk Assessment & Strategy
-        - <i class="bi bi-file-word-fill"></i>
-          Mission Briefing Documentation
-        - <i class="bi bi-fullscreen-exit"></i>
-          Full System Override
-      --------------------------------------------------------->
+        <div class="dub-menu-list ryte">
+          <div class="dub-menu-item">
+            <i class="bi bi-cloud-fog2"> </i>
+            <a href="#"> Secure Backup and Storage </a>
+          </div>
+          <div class="dub-menu-item">
+            <i class="bi bi-columns-gap"></i>
+            <a href="#"> Control Dashboard </a>
+          </div>
+          <div class="dub-menu-item">
+            <i class="bi bi-hammer"></i>
+            <a href="#"> Configuration & Maintenance </a>
+          </div>
+        </div>
+      </div> <!---------------[ /chat ]------------------------>
+    </div> <!-----------------( /menu-con )-------------------->
   </div> <!--------------[ con ]------------------------------->
   <script src="lib/bootstrap/bootstrap.bundle.js"> </script>
   <script src="http://localhost:35729/
@@ -240,4 +246,11 @@ livereload.js?snipver=1"></script>
   <script src="dub.js"></script>
 </body>
 </html>
-<!------------------------------------------------------------->
+<!-------------------------------------------------------------
+  23. Three people get into an empty elevator at the first floor of a
+  building that has 10 floors. Each presses the button for their desired
+  floor (unless one of the others has already pressed that
+  button). Assume that they are equally likely to want to go to floors 2
+  through 10 (independently of each other). What is the probability that
+  the buttons for 3 consecutive floors are pressed?
+  ------------------------------------------------------------->
