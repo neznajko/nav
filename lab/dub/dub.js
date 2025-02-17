@@ -6,7 +6,7 @@ function updateViewBox() {
     if( window.innerWidth < 600) {
         svg.setAttribute( "viewBox", "0 0 300 260" );
     } else {
-        svg.setAttribute( "viewBox", "0 0 400 200" );
+        svg.setAttribute( "viewBox", "0 0 400 300" );
     }
 }
 ////////////////////////////////////////////////////////////////
@@ -69,8 +69,10 @@ for( let j = 0; j < nfm; ++j ){
         if( clickSwitch[j] ){
             dubMenuList[j].style.display = "none";
         } else {
-            dubMenuList[j].style.display = "flex";
-        }
+            for( let i = 0; i < nfm; ++i ){
+                dubMenuList[i].style.display = i == j ? "flex" : "none";
+            }
+        }      
         clickSwitch[j] = !clickSwitch[j];
     });    
 }

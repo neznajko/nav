@@ -17,6 +17,10 @@ display=swap"
 family=Grechen+Fuemen&family=Michroma&
 family=Orbitron:wght@400..900&display=swap"
         rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?
+family=Lavishly+Yours&display=swap" rel="stylesheet">
+
   <link rel="shortcut icon" href="#">
   <link rel="stylesheet" 
         href="lib/bootstrap/bootstrap.css">
@@ -108,8 +112,8 @@ bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
           </defs>
           <use href="#deck-text"/>
           <rect id="deck-light"
-                x="0" y="102"
-                height="20" width="300"
+                x="0" y="88"
+                height="28" width="300"
                 fill="var( --dub-light-color )" 
                 clip-path="url(#deck-clip)"/>
         </svg>
@@ -130,8 +134,8 @@ bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
           </defs>
           <use href="#config-text"/>
           <rect id="config-light"
-                x="0" y="102"
-                height="20" width="400"
+                x="0" y="105"
+                height="12" width="400"
                 fill="var( --dub-light-color )" 
                 clip-path="url(#config-clip)"/>
         </svg>
@@ -151,8 +155,8 @@ bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
           </defs>
           <use href="#app-text"/>
           <rect id="app-light"
-                x="0" y="102"
-                height="20" width="300"
+                x="0" y="120"
+                height="40" width="300"
                 fill="var( --dub-light-color )" 
                 clip-path="url(#app-clip)"/>
         </svg>
@@ -238,6 +242,27 @@ bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         </div>
       </div> <!---------------[ /chat ]------------------------>
     </div> <!-----------------( /menu-con )-------------------->
+    <!-- [ S e a r c h C o n ] -------------------------------->
+    <div class="dub-search-con center">
+      <div class="dub-search-frame">
+        <input type="text"
+               class="dub-search"
+               placeholder="_ciphertext" />
+      </div>
+    </div> <!-- dub-search-con -------------------------------->
+    <div class="dub-logout-con"> <!------/ logout /------------>
+      <a href="#"> logout </a>
+    </div> <!----------------/ /logout /----------------------->
+    <div class="dub-body">
+      <div class="dub-mbody center">
+        Mission parameters confirmed. Secure channel deactivated.
+        Take care 0012
+      </div>
+    </div>
+    <!--
+        Mission parameters confirmed. Secure channel deactivated.
+        Take care 0012.
+    -->
   </div> <!--------------[ con ]------------------------------->
   <script src="lib/bootstrap/bootstrap.bundle.js"> </script>
   <script src="http://localhost:35729/
@@ -247,10 +272,40 @@ livereload.js?snipver=1"></script>
 </body>
 </html>
 <!-------------------------------------------------------------
-  23. Three people get into an empty elevator at the first floor of a
-  building that has 10 floors. Each presses the button for their desired
-  floor (unless one of the others has already pressed that
-  button). Assume that they are equally likely to want to go to floors 2
-  through 10 (independently of each other). What is the probability that
-  the buttons for 3 consecutive floors are pressed?
+  23. Three people get into an empty elevator at the first floo R 
+  of a building that has 10 floors. Each presses the button for THEIR 
+  desired floor( unless one of the others has already pressed t HAT 
+  button ). Assume that they are equally likely to want to go t O 
+  floors 2 through 10( independently of each other ). What is t HE 
+  probability that the buttons for 3 consecutive floors are pre SSED?
+  -------------------------------------------------------------
+    This is strange why modern math books give problems without
+    giving answers? Zo I can get this problem easily wrong,
+    becoz for example, lets look at the case of 2 people and 4
+    levels 0 1 2 3, Zo the two person destinations are
+    independent, and we have 3 cross 3 possibilities:
+       1   2   3
+    1 o-- oo- o-o  , where o-o for example means 1 and 3 levels
+    2 oo- -o- -oo  are activated, the cases where we have two
+    3 o-o -oo --o  consecutive floors are 12, 21, 23, 32, zo
+    the probability is 4/9. But if we look at the elevator
+    indicators only we'll have cases where only one button is
+    pressed: o-- -o- --o, and where 2 buttons are hit:
+    oo- -oo o-o, and we'll get the probability 2/6 = 1/3, this
+    happens becoz the events in the latter case are not equally
+    likely; we can get o-- in one way and oo- in 2 ways.
+    Zo back to the problem from floors 2 to 10 there are 9
+    choices and for 3 people we'll get total number of cases as
+    N = 9*9*9, we can have 3 consecutive buttons in lets see
+    2 3 4 5 6 7 8 9 10, in 7 ways, now we have to multiply by 3!
+    * * *               cos we have to take all permutations
+      * * *             2 3 4 first hits 2, second 3, third 4
+        * * *           2 4 3 first hits 2, second 4, third 3
+          * * *         etc., zo number of positive outcomes is
+            * * *       n = 7*3!= 7 * 6 = 42, and the probability
+              * * *     is P = n/N = 6*7/9*9*9 = 14/243 = 5.76%
+                * * *
+  -------------------------------------------------------------
+  -------------------------------------------------------------
+  -------------------------------------------------------------
   ------------------------------------------------------------->
