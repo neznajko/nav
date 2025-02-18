@@ -32,6 +32,19 @@ family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?
 family=Michroma&family=Orbitron:wght@400..900&display=swap" 
           rel="stylesheet">
+<!----------[ Abril ]------------------------------------------>
+    <link href="https://fonts.googleapis.com/css2?
+family=Abril+Fatface&family=Dancing+Script:wght@400..700&
+display=swap"
+        rel="stylesheet">
+<!----------[ Grechen ]---------------------------------------->
+    <link href="https://fonts.googleapis.com/css2?
+family=Grechen+Fuemen&family=Michroma&
+family=Orbitron:wght@400..900&display=swap"
+        rel="stylesheet">
+<!----------[ Lavishly ]--------------------------------------->
+    <link href="https://fonts.googleapis.com/css2?
+family=Lavishly+Yours&display=swap" rel="stylesheet">
 <!------------------------------------------------------------->
     <link rel="shortcut icon"
           href="#">
@@ -42,6 +55,27 @@ family=Michroma&family=Orbitron:wght@400..900&display=swap"
 bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet"
           href="style.css">
+    <style>
+      :root {
+          --dub-con-bgr:                         hsl(249,75%,80%);
+          --dub-brand-con-bgr:                   hsl(265,50%,15%);
+          --dub-brand-char-stroke:              hsl(0,10%,35%,.5);
+          --dub-brand-dub-color:              hsl(28,100%,25%,.7);
+          --dub-light-color:                     hsl(40,100%,40%);
+          --dub-links-con-bgr:         var( --dub-brand-con-bgr );
+          --dub-links-color:                     hsl(210,90%,45%);
+          --dub-links-bgr:                   hsl(220,80%,50%,0.4);
+          --dub-deck-bgr:                         hsl(40,50%,10%);
+          --dub-grad-20:                         hsl(265,50%,15%);
+          --dub-grad-40:                         hsl(255,60%,20%);
+          --dub-grad-60:                         hsl(240,65%,30%);
+          --dub-grad-80:                         hsl(225,75%,40%);
+          --dub-grad-100:                        hsl(220,80%,43%);
+          --dub-menu-bgr:                   hsl(240,100%,20%,0.4);
+          --dub-menu-fgr:                        hsl(260,20%,70%);
+          --dub-menu-list-bgr:                hsl(35,40%,20%,0.6);
+      }
+    </style>
 </head>
 <!------------------------------------- ---------- -------------
   ---------------------------------   - -   -   -   ------------
@@ -296,7 +330,7 @@ bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
           <circle cx="100"
                   cy="148"
                   r="120"
-                  fill="hsla( 240, 50%, 50%, .7 )"
+                  fill="hsla( 240, 50%, 40%, .7 )"
                   stroke="hsla( 0, 50%, 50%, .9 )"
                   stroke-width="2px"
                   />
@@ -342,7 +376,7 @@ bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
                      fill="hsl(260,30%,25%)"
                      />
             <polygon points="197,100 247,0 250,0, 200,100"
-                     fill="hsla(0,80%,80%,1.0)"
+                     fill="hsla(0,80%,80%,0.7)"
                      />
             <polygon points="180,100 230,0 247,0, 197,100"
                      fill="hsla(5,80%,80%,.4)"
@@ -390,13 +424,265 @@ bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
       </div>
     </div>
   </div>
+  <!----------------------------------------------------------
+    ------[ d u b ]-------------------------------------------
+    ----------------------------------------------------------->
+  <div class="dub-con"> <!--[ con ]---------------------------->
+    <div class="dub-brand-con"> <!-----[ brand-con ]----------->
+      <svg id="dub-brand"
+           viewBox="0 0 400 200"
+           preserveAspectRatio="none"
+           width="100%" height="100%"
+           xmlns="http://www.w3.org/2000/svg">
+        <style>
+          .char {
+              font-family: "Abril Fatface", serif;
+              font-size: 20rem;
+              stroke: var( --dub-brand-char-stroke );
+              stroke-width: 2;
+              fill: none;
+          }
+          .dub {
+              font-family: "Abril Fatface", serif;
+              font-size: 9rem;
+              paint-order: stroke;
+              fill: var( --dub-brand-dub-color );
+          }
+          .dub.clip {
+              fill: var( --dub-light-color );
+          }
+        </style>
+        <clipPath id="clip">
+          <text x="22" y="150" class="dub"> dub </text>
+        </clipPath>
+        <text x="-42" y="250" class="char"> d </text>
+        <text x="72" y="178" class="char"> u </text>
+        <text x="148" y="194" class="char"> b </text>
+        <text x="22" y="150" class="dub"> dub </text>
+        <text x="8" y="198" class="dub clip"
+              clip-path="url(#clip)"> dub </text>
+        <defs>
+          <rect id="pixel" width="3" height="3"
+                fill="var( --dub-light-color )"/>
+        </defs>
+        <use href="#pixel" x="50" y="33" fill="red"/>
+        <use href="#pixel" x="87" y="166"/>
+        <use href="#pixel" x="160" y="65"/>
+        <use href="#pixel" x="261" y="158"/>
+      </svg>
+    </div> <!-------[ brand-con ]------------------------------>
+    <div class="dub-links-con"> <!-----/ links-con /----------->
+      <a class="dub-deck dub-link" href="#"> <!--[ dub-deck ]-->
+        <svg viewBox="0 0 300 200"
+             preserveAspectRatio="none"
+             width="100%" height="100%"
+             xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <text id="deck-text" x="37" y="130" class="lnk">
+              deck
+            </text>
+            <clipPath id="deck-clip">
+              <use href="#deck-text"/>
+            </clipPath>
+          </defs>
+          <use href="#deck-text"/>
+          <rect id="deck-light"
+                x="0" y="88"
+                height="28" width="300"
+                fill="var( --dub-light-color )" 
+                clip-path="url(#deck-clip)"/>
+        </svg>
+      </a> <!-----------[ /dub-deck ]-------------------------->
+      <!--------------[ dub-config ]--------------------------->
+      <a class="dub-config dub-link" href="#"> 
+        <svg viewBox="0 0 400 200"
+             preserveAspectRatio="none"
+             width="100%" height="100%"
+             xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <text id="config-text" x="60" y="130" class="lnk">
+              config
+            </text>
+            <clipPath id="config-clip">
+              <use href="#config-text"/>
+            </clipPath>
+          </defs>
+          <use href="#config-text"/>
+          <rect id="config-light"
+                x="0" y="105"
+                height="12" width="400"
+                fill="var( --dub-light-color )" 
+                clip-path="url(#config-clip)"/>
+        </svg>
+      </a> <!-----------[ /dub-config ]------------------------>
+      <a class="dub-app dub-link" href="#"> <!--[ dub-app ]---->
+        <svg viewBox="0 0 300 200"
+             preserveAspectRatio="none"
+             width="100%" height="100%"
+             xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <text id="app-text" x="30" y="130" class="lnk">
+              /app
+            </text>
+            <clipPath id="app-clip">
+              <use href="#app-text"/>
+            </clipPath>
+          </defs>
+          <use href="#app-text"/>
+          <rect id="app-light"
+                x="0" y="120"
+                height="40" width="300"
+                fill="var( --dub-light-color )" 
+                clip-path="url(#app-clip)"/>
+        </svg>
+      </a> <!-----------[ /dub-app ]--------------------------->
+    </div> <!--------/ links-con /----------------------------->
+    <div class="dub-gradient"> </div> <!----( /gradient )------>
+    <div class="dub-menu-con"> <!--( menu-con )---------------->
+      
+      <div class="dub-menu center"> <!------[ CPU ]------------>
+        <a href="#">
+          <i class="bi bi-cpu"></i>
+        </a>
+        <div class="dub-menu-list left">
+          <div class="dub-menu-item">
+            <i class="bi bi-distribute-horizontal"></i>
+            <a href="#"> Network Infrastructure Sync </a>
+          </div>
+          <div class="dub-menu-item">
+            <i class="bi bi-dice-6-fill"></i>
+            <a href="#"> Risk Assessment & Strategy </a>
+          </div>
+          <div class="dub-menu-item">
+            <i class="bi bi-file-word-fill"></i>
+            <a href="#"> Mission Briefing Documentation </a>
+          </div>
+          <div class="dub-menu-item">
+            <i class="bi bi-fullscreen-exit"></i>
+            <a href="#"> Full System Override </a>
+          </div>
+        </div>
+      </div>  <!----------------[ /CPU ]----------------------->
+      <div class="dub-menu center"> <!--------[ chevron ]------>
+        <a href="#">
+          <i class="bi bi-chevron-down"></i>
+        </a>
+        <div class="dub-menu-list left">
+          <div class="dub-menu-item">
+            <i class="bi bi-reply-all"></i>
+            <a href="#"> Tactical Positioning </a>
+          </div>
+          <div class="dub-menu-item">
+            <i class="bi bi-rocket"></i>
+            <a href="#"> Mission Launch </a>
+          </div>
+          <div class="dub-menu-item">
+            <i class="bi bi-x-diamond-fill"></i>
+            <a href="#"> Classified Objective </a>
+          </div>
+        </div>
+      </div> <!----------------[ /chevron ]-------------------->
+      <div class="dub-menu center"> <!--[ instagram ]---------->
+        <a href="#">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <div class="dub-menu-list ryte">
+          <div class="dub-menu-item">
+            <i class="bi bi-hdd"></i>
+            <a href="#"> Classified Information Vault </a>
+          </div>
+          <div class="dub-menu-item">
+            <i class="bi bi-hearts"></i>
+            <a href="#"> High-Priority Target Profiles </a>
+          </div>
+        </div>
+      </div> <!-----------------[ /instagram ]----------------->
+      <div class="dub-menu center"> <!------[ chat ]----------->
+        <a href="#">
+          <i class="bi bi-chat-left"></i>
+        </a>
+        <div class="dub-menu-list ryte">
+          <div class="dub-menu-item">
+            <i class="bi bi-cloud-fog2"> </i>
+            <a href="#"> Secure Backup and Storage </a>
+          </div>
+          <div class="dub-menu-item">
+            <i class="bi bi-columns-gap"></i>
+            <a href="#"> Control Dashboard </a>
+          </div>
+          <div class="dub-menu-item">
+            <i class="bi bi-hammer"></i>
+            <a href="#"> Configuration & Maintenance </a>
+          </div>
+        </div>
+      </div> <!---------------[ /chat ]------------------------>
+    </div> <!-----------------( /menu-con )-------------------->
+    <!-- [ S e a r c h C o n ] -------------------------------->
+    <div class="dub-search-con center">
+      <div class="dub-search-frame">
+        <input type="text"
+               class="dub-search"
+               placeholder="_ciphertext" />
+      </div>
+    </div> <!-- dub-search-con -------------------------------->
+    <div class="dub-logout-con"> <!------/ logout /------------>
+      <a href="#"> logout </a>
+    </div> <!----------------/ /logout /----------------------->
+    <div class="dub-body">
+      <div class="dub-mbody center">
+        Mission parameters confirmed. Secure channel deactivated.
+        Take care 0012
+      </div>
+    </div>
+  </div> <!--------------[ con ]------------------------------->  
+<!-------------------------------------------------------------
+  23. Three people get into an empty elevator at the first floo R 
+  of a building that has 10 floors. Each presses the button for THEIR 
+  desired floor( unless one of the others has already pressed t HAT 
+  button ). Assume that they are equally likely to want to go t O 
+  floors 2 through 10( independently of each other ). What is t HE 
+  probability that the buttons for 3 consecutive floors are pre SSED?
+  -------------------------------------------------------------
+    This is strange why modern math books give problems without
+    giving answers? Zo I can get this problem easily wrong,
+    becoz for example, lets look at the case of 2 people and 4
+    levels 0 1 2 3, Zo the two person destinations are
+    independent, and we have 3 cross 3 possibilities:
+       1   2   3
+    1 o-- oo- o-o  , where o-o for example means 1 and 3 levels
+    2 oo- -o- -oo  are activated, the cases where we have two
+    3 o-o -oo --o  consecutive floors are 12, 21, 23, 32, zo
+    the probability is 4/9. But if we look at the elevator
+    indicators only we'll have cases where only one button is
+    pressed: o-- -o- --o, and where 2 buttons are hit:
+    oo- -oo o-o, and we'll get the probability 2/6 = 1/3, this
+    happens becoz the events in the latter case are not equally
+    likely; we can get o-- in one way and oo- in 2 ways.
+    Zo back to the problem from floors 2 to 10 there are 9
+    choices and for 3 people we'll get total number of cases as
+    N = 9*9*9, we can have 3 consecutive buttons in lets see
+    2 3 4 5 6 7 8 9 10, in 7 ways, now we have to multiply by 3!
+    * * *               cos we have to take all permutations
+      * * *             2 3 4 first hits 2, second 3, third 4
+        * * *           2 4 3 first hits 2, second 4, third 3
+          * * *         etc., zo number of positive outcomes is
+            * * *       n = 7*3!= 7 * 6 = 42, and the probability
+              * * *     is P = n/N = 6*7/9*9*9 = 14/243 = 5.76%
+                * * *
+  -------------------------------------------------------------
+  -------------------------------------------------------------
+  -------------------------------------------------------------
+  ------------------------------------------------------------->
+  <div style="background:black;height:50rem;"> </div>
   <!-- -->
   <script src="lib/bootstrap/bootstrap.bundle.js"></script>
   <script src="script.js"></script>
+
   <script src="float.js"></script>
   <script src="folder.js"></script>
   <script src="dropdown.js"> </script>
   <script src="alt.js"> </script>
+  <script src="dub.js"> </script>
   <script src="http://localhost:35729/livereload.js?snipver=1"></script>
 </body>
 </html>

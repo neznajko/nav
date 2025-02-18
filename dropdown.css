@@ -116,8 +116,8 @@ a {
 .dropdown-body {
     grid-row: 2;
     grid-column: 1/-1;
-    color: hsl( 10, 20%, 40% );
-    background: hsl( 250, 80%, 22% );
+    color: hsl( 10, 20%, 50% );
+    background: hsl( 250, 80%, 18% );
     display: flex;
     align-items: center;
     font-family: "Dancing Script";
@@ -129,7 +129,7 @@ a {
 .dropdown-links-con {
     grid-row: 1;
     grid-column: 2;
-    background: hsl( 250, 90%, 20% );
+    background: hsl( 250, 90%, 10% );
     display: grid;
     grid-template-columns: repeat( 12, 1fr );
     grid-template-rows: repeat( 4, 1fr );

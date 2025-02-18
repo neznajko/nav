@@ -1,12 +1,11 @@
 :root {
-    --float-bgr:          hsl( 228, 50%, 50% );
+    --float-bgr:          hsl( 228, 50%, 40% );
     --float-brand-bgr:    hsl( 210, 50%, 20% );
-    --float-brand-fgr:    hsl( 180, 99%, 59% );
-    --float-brand-fgr-2:  hsl( 190, 80%, 50% );
-    --float-link-bgr-2:   hsl( 215, 20%, 68% );
-    --float-link-bgr:     hsl( 320, 10%, 48% );
-    --float-link-fgr:     hsl(   0, 21%, 80% );
-    --float-input-bgr:    hsl(   0,  8%, 78% );
+    --float-brand-fgr:    hsl( 180, 99%, 59%, 0.8 );
+    --float-brand-fgr-2:  hsl( 190, 80%, 50%, 0.6 );
+    --float-link-bgr:     hsl( 320, 10%, 38% );
+    --float-link-fgr:     hsl(   0, 21%, 80%, 0.5 );
+    --float-input-bgr:    hsl(   0,  8%, 68% );
     --float-input-fgr:    hsl(   0,  8%, 10% );
     --float-button-bgr:   hsl( 250, 35%, 28% );
     --float-button-bgr-2: hsl( 235, 34%, 25% );
@@ -101,7 +100,7 @@ nav.float > div {
 div.body {
     min-height: 20%;
     background-color: hsl( 235, 60%, 20% );
-    color: hsl( 260, 60%, 50% );
+    color: hsl( 260, 60%, 50%, 0.5 );
     letter-spacing: 1rem;
     font-size: 1.7rem;
     padding-left: 2rem;

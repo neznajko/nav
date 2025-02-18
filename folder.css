@@ -1,8 +1,8 @@
 :root {
-    --folder-bgr:         hsl( 15, 10%, 60% );
-    --folder-brand-bgr-1: hsla( 240, 50%, 50%, 0.5 );
+    --folder-bgr:         hsl( 15, 10%, 50% );
+    --folder-brand-bgr-1: hsla( 260, 40%, 15%, 0.5 );
+    --folder-brand-fgr-1: hsl( 20, 40%, 68% );
     --folder-brand-bgr-2: hsla(  10, 60%, 90%, 0.2 );
-    --folder-brand-fgr-1: hsl( 10, 60%, 90% );
     --folder-brand-fgr-2: hsla( 240, 50%, 50%, 0.6 );
 
     --folder-brand-border-1: 1px solid hsla( 230, 10%, 90%, 0.5 );
@@ -11,6 +11,8 @@
     --folder-links-bgr: hsl( 210, 10%, 10% );
 
     --folder-radius: 2rem;
+
+    --folder-out-bgr: hsl(40,20%,35%);
 }
 .folder > nav {
     /* つくえ｜の｜上｜に｜本｜を｜おいて｜ください。 */
@@ -63,7 +65,7 @@ nav > p {
 .out-base {
     grid-row: 4/-1;
     grid-column: 1/-1;
-    background: hsl( 40, 20%, 40% );
+    background: var( --folder-out-bgr );
     z-index: 0;
 }
 .folder a.check {
@@ -92,7 +94,7 @@ nav > p {
     z-index: 1;
 }
 .folder a.out {
-    background: hsl( 40, 20%, 40% );
+    background: var( --folder-out-bgr );
     color: hsl( 20, 30%, 0% );
     align-items: end;
     justify-content: center;
@@ -117,7 +119,7 @@ nav > p {
     font-size: 1.1rem;
 }
 .folder form > input {
-    background: hsl( 10, 5%, 80% );
+    background: hsl( 10, 5%, 70% );
     padding: 0.5rem 1rem;
     border-radius: 1.5rem;
     color: hsl( 10, 10%, 40%);
